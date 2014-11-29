@@ -1,0 +1,51 @@
+Duration: 115 minutes
+# Questions: 51
+Passing Score: 68%
+US exam cost: US$ 245
+
+Topics:
+
+Section 1: Fundamental Object-Oriented Concepts
+- 
+- Describe, compare, and contrast concrete classes, abstract classes, and interfaces, and how inheritance applies to them.
+- Describe, compare, and contrast class compositions, and associations (including multiplicity: (one-to-one, one-to-many, and many-to-many), and association navigation.
+- Describe information hiding (using private attributes and methods), encapsulation, and exposing object functionality using public methods; and describe the JavaBeans conventions for setter and getter methods.
+- Describe polymorphism as it applies to classes and interfaces, and describe and apply the "program to an interface" principle.
+
+Section 2: Java Implementation of Object-Oriented Concepts
+- 
+- Develop code that uses primitives, enumeration types, and object references, and recognize literals of these types.
+- Develop code that declares concrete classes, abstract classes, and interfaces, code that supports implementation and interface inheritance, code that declares instance attributes and methods, and code that uses the Java access modifiers: private and public.
+- Develop code that implements simple class associations, code that implements multiplicity using arrays, and recognize code that implements compositions as opposed to simple associations, and code that correctly implements association navigation.
+- Develop code that uses polymorphism for both classes and interfaces, and recognize code that uses the "program to an interface" principle.
+
+Section 3: Algorithm Design and Implementation
+- 
+- Given an algorithm as pseudo-code, determine the correct scope for a variable used in the algorithm, and develop code to declare variables in any of the following scopes: instance variable, method parameter, and local variable.
+- Given an algorithm as pseudo-code, develop method code that implements the algorithm using conditional statements (if and switch), iteration statements (for, for-each, while, and do-while), assignment statements, and break and continue statements to control the flow within switch and iteration statements.
+- Given an algorithm with multiple inputs and an output, develop method code that implements the algorithm using method parameters, a return type, and the return statement, and recognize the effects when object references and primitives are passed into methods that modify them.
+- Given an algorithm as pseudo-code, develop code that correctly applies the appropriate operators including assignment operators (limited to: =, +=, -=), arithmetic operators (limited to: +, -, *, /, %, ++, --), relational operators (limited to: <, <=, >, >=, ==, !=), logical operators (limited to: !, &&, ||) to produce a desired result. Also, write code that determines the equality of two objects or two primitives.
+- Develop code that uses the concatenation operator (+), and the following methods from class String: charAt, indexOf, trim, substring, replace, length, startsWith, and endsWith.
+
+Section 4: Java Development Fundamentals
+- 
+- Demonstrate the proper use of the "javac" command (including the command-line options: -d and -classpath), and demonstrate the proper use of the "java" command (including the command-line options: -classpath, -D and -version).
+- Describe the purpose and types of classes for the following Java packages: java.awt, javax.swing, java.io, java.net, java.util.
+
+Section 5: Java Platforms and Integration Technologies
+- 
+- Describe at a high level the benefits and basic characteristics of RMI.
+- Describe at a high level the benefits and basic characteristics of JDBC, SQL, and RDBMS technologies.
+- Describe at a high level the benefits and basic characteristics of JNDI, messaging, and JMS technologies.
+
+Section 6: Client Technologies
+- 
+- Describe at a high level the basic characteristics, benefits, drawbacks, and deployment issues related to creating clients using J2ME midlets.
+- Describe at a high level the basic characteristics, benefits, drawbacks, and deployment issues related to creating fat-clients using Applets.
+- Describe at a high level the basic characteristics, benefits, drawbacks, and deployment issues related to creating fat-clients using Swing.
+
+Section 7: Server Technologies
+- Describe at a high level the basic characteristics of: EJB, servlets, JSP, JMS, JNDI, SMTP, JAX-RPC, Web Services (including SOAP, UDDI, WSDL, and XML), and JavaMail.
+- Describe at a high level the basic characteristics of servlet and JSP support for HTML thin-clients.
+- Describe at a high level the use and basic characteristics of EJB session, entity and message-driven beans.
+- Describe at a high level the fundamental benefits and drawbacks of using J2EE server-side technologies, and describe and compare the basic characteristics of the web-tier, business-tier, and EIS tier.
