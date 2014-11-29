@@ -72,21 +72,41 @@ public class CheckForChangesIT {
 		doc = builder.parse(stream);
 	}
 
+	/**
+	 * Remove
+	 * <p>
+	 * tags and whitespace if present
+	 * 
+	 * @param tag
+	 * @return
+	 */
 	private String getCDataForTag(String tag) {
 		NodeList nodeList = doc.getElementsByTagName(tag);
 		assertEquals("must be exactly one tag named " + tag, 1,
 				nodeList.getLength());
 		Node cdata = nodeList.item(0).getFirstChild();
-		return cdata.getNodeValue();
+		String value = cdata.getNodeValue();
+		value = value.replaceAll("^\\s*<p>", "");
+		value = value.replaceAll("</p>\\s+", "");
+		return value.trim();
 	}
 
 	/*
 	 * Human readable version that we store/compare over time
 	 */
-	private String convertToString() {
+	private String convertToString() throws Exception {
 		StringBuilder data = new StringBuilder();
 
-		data.append("Duration: " + getCDataForTag("DURATION"));
+		data.append("Duration: \t" + getCDataForTag("DURATION") + "\n");
+		data.append("# Questions: \t" + getCDataForTag("NUMBER_OF_QUESTIONS")
+				+ "\n");
+		data.append("Passing Score: \t" + getCDataForTag("PASSING_SCORE")
+				+ "\n");
+		data.append("US exam cost: \t" + getCDataForTag("PRICE") + "\n");
+		data.append("\n");
+
+		TopicListParser parser = new TopicListParser(getCDataForTag("TOPICS"));
+		data.append("Topics:\n" + parser.convertToTextFormat());
 
 		System.out.println(data);
 		return data.toString();
