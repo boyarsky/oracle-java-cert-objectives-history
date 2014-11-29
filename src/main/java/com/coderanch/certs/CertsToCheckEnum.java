@@ -8,7 +8,13 @@ package com.coderanch.certs;
  */
 public enum CertsToCheckEnum {
 
-	OCA_JAVA_8(
+	OCAJP_JAVA_7(
+			"1Z0-803",
+			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-803"), 
+	OCPJP_JAVA_7(
+			"1Z0-804",
+			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-804"),
+	OCAJP_JAVA_8(
 			"1Z0-808",
 			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-808");
 

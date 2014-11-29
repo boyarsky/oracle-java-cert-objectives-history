@@ -29,7 +29,7 @@ public class SanityCheckAjaxUrlUnchangedIT {
 
 	@Test
 	public void ajaxUrl() {
-		String url = CertsToCheckEnum.OCA_JAVA_8.getUrl();
+		String url = CertsToCheckEnum.OCAJP_JAVA_8.getUrl();
 		driver.get(url);
 		String source = driver.getPageSource();
 		assertTrue(

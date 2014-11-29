@@ -8,6 +8,7 @@ import java.util.*;
 
 import javax.xml.parsers.*;
 
+import org.apache.commons.io.*;
 import org.junit.*;
 import org.junit.runner.*;
 import org.junit.runners.*;
@@ -63,8 +64,10 @@ public class CheckForChangesIT {
 	public void upToDate() throws Exception {
 		parseDocument();
 		String currentData = convertToString();
-
+		assertSameAsExisting(currentData);
 	}
+
+	// ----------------------------------------------------
 
 	private void parseDocument() throws Exception {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -72,13 +75,8 @@ public class CheckForChangesIT {
 		doc = builder.parse(stream);
 	}
 
-	/**
-	 * Remove
-	 * <p>
-	 * tags and whitespace if present
-	 * 
-	 * @param tag
-	 * @return
+	/*
+	 * Remove &lt;p&gt; tags and whitespace if present
 	 */
 	private String getCDataForTag(String tag) {
 		NodeList nodeList = doc.getElementsByTagName(tag);
@@ -97,19 +95,40 @@ public class CheckForChangesIT {
 	private String convertToString() throws Exception {
 		StringBuilder data = new StringBuilder();
 
-		data.append("Duration: \t" + getCDataForTag("DURATION") + "\n");
-		data.append("# Questions: \t" + getCDataForTag("NUMBER_OF_QUESTIONS")
+		data.append("Duration: " + getCDataForTag("DURATION") + "\n");
+		data.append("# Questions: " + getCDataForTag("NUMBER_OF_QUESTIONS")
 				+ "\n");
-		data.append("Passing Score: \t" + getCDataForTag("PASSING_SCORE")
+		data.append("Passing Score: " + getCDataForTag("PASSING_SCORE")
 				+ "\n");
-		data.append("US exam cost: \t" + getCDataForTag("PRICE") + "\n");
+		data.append("US exam cost: " + getCDataForTag("PRICE") + "\n");
 		data.append("\n");
 
 		TopicListParser parser = new TopicListParser(getCDataForTag("TOPICS"));
 		data.append("Topics:\n" + parser.convertToTextFormat());
 
-		System.out.println(data);
 		return data.toString();
 	}
 
+	// ----------------------------------------------------
+
+	/*
+	 * Fail if file not present (new cert) or something has changed since last
+	 * run.
+	 */
+	private void assertSameAsExisting(String actual) throws Exception {
+		// TODO switch to built in library when upgrade to Java 7 on CI server
+		File file = new File("src/main/resources/" + certToCheck.getExamNumber()
+				+ ".txt");
+		assertTrue(file + " does not exist for " + certToCheck
+				+ ". Please create it with contents: \n" + actual,
+				file.exists());
+		String expected = FileUtils.readFileToString(file);
+		assertEquals(
+				"Oracle has updated the cert "
+						+ certToCheck
+						+ ". Please update "
+						+ file
+						+ " with the new contents and publicize if a significant change: \n"
+						+ actual, expected, actual);
+	}
 }
