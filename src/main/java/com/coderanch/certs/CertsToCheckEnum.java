@@ -25,8 +25,25 @@ public enum CertsToCheckEnum {
 			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-805"),
 	OCAJP_JAVA_8(
 			"1Z0-808",
-			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-808");
-
+			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-808"),
+			
+    // ----------------------------------------------------		
+	OCMJEA_5_PART_1(
+			"1Z0-864",
+			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-864"),
+	OCMJEA_5_PART_2(
+			"1Z0-865",
+			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-865"),
+	OCMJEA_5_PART_3(
+			"1Z0-866",
+			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-866"),
+	OCMJEA_6_PART_1(
+			"1Z0-807",
+			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-807"),
+	OCMJEA_6_UPGRADE(
+			"1Z0-868",
+			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-868");
+	
 	// ----------------------------------------------------
 	String examNumber;
 	String url;

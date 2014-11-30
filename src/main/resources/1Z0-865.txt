@@ -1,0 +1,49 @@
+Duration: 6 months from assignment purchase
+# Questions: NA
+Passing Score: Subject to validation of assignment.%
+US exam cost: US$ 245
+
+Topics:
+- Document a given system architecture by creating UML diagrams for it
+- Explain the main advantages of an object-oriented approach to system design. including the effect of encapsulation, inheritance, and use of interfaces on architectural characteristics.
+- Describe how the principle of "separation of concerns" has been applied to the main system tiers of a Java Platform, Enterprise Edition (Java EE) application. Tiers include client (both GUI and web), web (web container), business (EJB container), integration, and resource tiers.
+- Describe how the principle of "separation of concerns" has been applied to the layers of a Java EE application. Layers include application, virtual platform (component APIs), application infrastructure (containers), enterprise services (operating system and virtualization), compute and storage, and the networking infrastructure layers.
+
+Section 2: Common Architectures
+- Explain the advantages and disadvantages of two-tier architectures when examined under the following topics: scalability, maintainability, reliability, availability, extensibility, performance, manageability, and security.
+- Explain the advantages and disadvantages of three-tier architectures when examined under the following topics: scalability, maintainability, reliability, availability, extensibility, performance, manageability, and security
+- Explain the advantages and disadvantages of multi-tier architectures when examined under the following topics: scalability, maintainability, reliability, availability, extensibility, performance, manageability, and security.
+- Explain the benefits and drawbacks of rich clients and browser-based clients as deployed in a typical Java EE application.
+- Create a logical and physical model of a system infrastructure architecture.
+
+Section 3: Integration and Messaging
+- Explain possible approaches for communicating with an external system from a Java EE technology-based system given an outline description of those systems and describe the benefits and drawbacks of each approach.
+- Explain typical uses of web services and XML over HTTP as mechanisms to integrate distinct software components.
+- Explain how JCA and JMS are used to integrate distinct software components as part of an overall Java EE application.
+- Given a scenario, explain the appropriate messaging strategy to satisfy the requirements
+
+Section 4: Business Tier Technologies
+- Explain and contrast uses for entity beans, entity classes, stateful and stateless session beans, and message-driven beans and understand the advantages and disadvantages of each type.
+- Explain and contrast the following persistence strategies: container-managed persistence (CMP), BMP, JDO, JPA, and ORM, and using DAOs (Data Access Objects) and direct JDBC technology-based persistence under the following headings: ease of development, performance, scalability, extensibility and security.
+
+Section 5: Web Tier Technologies
+- Given a system requirements definition, explain and justify your rationale for choosing a web-centric or EJB-centric implementation to solve the requirements. Web-centric means that you are providing a solution that does not use EJBs. An EJB component-centric solution will require an application server that supports EJB components.
+
+Section 6: Applicability of Java EE Technology
+- Given a specified business problem, design a modular solution that solves the business problem using Java EE technology.
+- Given a specified business problem, identify and prioritize the main technology risk areas that must be addressed by the technical design and architecture.
+- Explain how the Java EE platform enables service-oriented architecture (SOA) -based applications.
+- Identify how the Java SE and Java EE platforms support the internationalization and localization of applications.
+- Explain your rationale for choosing build as compared to buy for a given Java EE component
+- Explain the typical challenges associated with the design and implementation of large scale enterprise software systems and how Java EE technology addresses those challenges.
+- Explain how you would design a Java EE application to repeatedly measure critical non-functional requirements and outline a standard process with specific strategies to refactor that application to improve on the results of the measurements.
+
+Section 7: Patterns
+- From a list, select the most appropriate pattern for a given scenario. Patterns are limited to those documented in the book - Alur, Crupi and Malks (2003). Core J2EE Patterns: Best Practices and Design Strategies 2nd Edition and named using the names given in that book.
+- From a list, select the most appropriate pattern for a given scenario. Patterns are limited to those documented in the book - Gamma, Erich; Richard Helm, Ralph Johnson, and John Vlissides (1995). Design Patterns: Elements of Reusable Object-Oriented Software and are named using the names given in that book.
+- From a list, select the benefits and drawbacks of a pattern drawn from the book - Gamma, Erich; Richard Helm, Ralph Johnson, and John Vlissides (1995). Design Patterns: Elements of Reusable Object-Oriented Software.
+- From a list, select the benefits and drawbacks of a specified Core J2EE pattern drawn from the book – Alur, Crupi and Malks (2003). Core J2EE Patterns: Best Practices and Design Strategies 2nd Edition.
+
+Section 8: Security
+- Given an architectural system specification, select the appropriate locations for implementation of specified security features, and select suitable technologies for implementation of those features
+- Identify and classify potential threats to a system and describe how a given architecture will address the threats.
