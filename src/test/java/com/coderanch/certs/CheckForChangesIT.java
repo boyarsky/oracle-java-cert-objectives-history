@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import java.io.*;
 import java.net.*;
+import java.nio.charset.*;
+import java.nio.file.*;
 import java.util.*;
 
 import javax.xml.parsers.*;
@@ -20,7 +22,7 @@ public class CheckForChangesIT {
 
 	@Parameters
 	public static List<CertsToCheckEnum[]> suite() {
-		List<CertsToCheckEnum[]> result = new ArrayList<CertsToCheckEnum[]>();
+		List<CertsToCheckEnum[]> result = new ArrayList<>();
 		for (CertsToCheckEnum element : CertsToCheckEnum.values()) {
 			result.add(new CertsToCheckEnum[] { element });
 		}
@@ -116,18 +118,17 @@ public class CheckForChangesIT {
 	 * run.
 	 */
 	private void assertSameAsExisting(String actual) throws Exception {
-		// TODO switch to built in library when upgrade to Java 7 on CI server
-		File file = new File("src/main/resources/" + certToCheck.getExamNumber()
+		Path path = Paths.get("src/main/resources/" + certToCheck.getExamNumber()
 				+ ".txt");
-		assertTrue(file + " does not exist for " + certToCheck
+		assertTrue(path + " does not exist for " + certToCheck
 				+ ". Please create it with contents: \n" + actual,
-				file.exists());
-		String expected = FileUtils.readFileToString(file);
+				Files.exists(path));
+		String expected = new String(Files.readAllBytes(path));
 		assertEquals(
 				"Oracle has updated the cert "
 						+ certToCheck
 						+ ". Please update "
-						+ file
+						+ path
 						+ " with the new contents and publicize if a significant change: \n"
 						+ actual, expected, actual);
 	}
