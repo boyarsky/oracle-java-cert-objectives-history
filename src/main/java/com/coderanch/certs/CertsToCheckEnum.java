@@ -8,6 +8,10 @@ package com.coderanch.certs;
  */
 public enum CertsToCheckEnum {
 
+	/*
+	 * Associate/Programmer 
+	 */
+	
 	OCJA_JAVA_6(
 			"1Z0-850",
 			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-850"),
@@ -27,7 +31,11 @@ public enum CertsToCheckEnum {
 			"1Z0-808",
 			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-808"),
 			
-    // ----------------------------------------------------		
+    // ----------------------------------------------------	
+			
+	/*
+	 * Architect 
+	 */
 	OCMJEA_5_PART_1(
 			"1Z0-864",
 			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-864"),
@@ -42,7 +50,40 @@ public enum CertsToCheckEnum {
 			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-807"),
 	OCMJEA_6_UPGRADE(
 			"1Z0-868",
-			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-868");
+			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-868"),
+	// ----------------------------------------------------
+			
+	/*
+	 * JPA/EJB 
+	 */
+	JPA_6(
+			"1Z0-898",
+			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-898"),
+	BUS_COMPONENT_5(
+			"1Z0-860",
+			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-860"),
+	BUS_COMPONENT_5_UPGRADE(
+			"1Z0-861",
+			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-861"),
+			
+	// ----------------------------------------------------		
+	/*
+	 * Web 
+	 */
+	WEB_SERVICES_6(
+			"1Z0-897",
+			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-897"),
+	WEB_SERVICES_5(
+			"1Z0-862",
+			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-862"),
+	WEB_COMPONENT_5(
+			"1Z0-858",
+			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-858"),
+	WEB_COMPONENT_5_UPGRADE(
+			"1Z0-859",
+			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-859"),		
+			
+	;
 	
 	// ----------------------------------------------------
 	String examNumber;
