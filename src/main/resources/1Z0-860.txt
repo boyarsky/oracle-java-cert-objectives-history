@@ -1,0 +1,87 @@
+Duration: 150 minutes
+# Questions: 61
+Passing Score: 57%
+US exam cost: US$ 245
+
+Topics:
+- Identify the uses, benefits, and characteristics of Enterprise JavaBeans technology, for version 3.0 of the EJB specification.
+- Identify the APIs that all EJB 3.0 containers must make available to developers.
+- Identify correct and incorrect statements or examples about EJB programming restrictions.
+- Match the seven EJB roles with the corresponding description of the role's responsibilities.
+- Describe the packaging and deployment requirements for enterprise beans.
+- Describe the purposes and uses of annotations and deployment descriptors, including how the two mechanisms interact, how overriding is handled, and how these mechanisms function at the class, method, and field levels.
+
+General EJB 3.0 Enterprise Bean Knowledge
+- Identify correct and incorrect statements or examples about the lifecycle of all 3.0 Enterprise Bean instances, including the use of the @PostConstruct and @PreDestroy callback methods.
+- Identify correct and incorrect statements or examples about interceptors, including implementing an interceptor class, the lifecycle of interceptor instances, @AroundInvoke methods, invocation order, exception handling, lifecycle callback methods, default and method level interceptors, and specifying interceptors in the deployment descriptor.
+- Identify correct and incorrect statements or examples about how enterprise beans declare dependencies on external resources using JNDI or dependency injection, including the general rules for using JNDI, annotations and/or deployment descriptors, EJB references, connection factories, resource environment entries, and persistence context and persistence unit references.
+- Identify correct and incorrect statements or examples about Timer Services, including the bean provider's view and responsibilities, the TimerService, Timer and TimerHandle interfaces, and @Timeout callback methods.
+- Identify correct and incorrect statements or examples about the EJB context objects that the container provides to 3.0 Session beans and 3.0 Message-Driven beans, including the security, transaction, timer, and lookup services the context can provide.
+- Identify correct and incorrect statements or examples about EJB 3.0 / EJB 2.x interoperability, including how to adapt an EJB 3.0 bean for use with clients written to the EJB 2.x API and how to access beans written to the EJB 2.x API from beans written to the EJB 3.0 API.
+
+EJB 3.0 Session Bean Component Contract & Lifecycle
+- Identify correct and incorrect statements or examples that compare the purpose and use of Stateful and Stateless Session Beans.
+- Identify correct and incorrect statements or examples about remote and local business interfaces for Session Beans.
+- Write code for the bean classes of Stateful and Stateless Session Beans.
+- Identify correct and incorrect statements or examples about the lifecycle of a Stateful Session Bean including the @PrePassivate and @PostActivate lifecycle callback methods and @Remove methods.
+- Given a list of methods of a Stateful or Stateless Session Bean class, define which of the following operations can be performed from each of those methods: SessionContext interface methods, UserTransaction methods, access to the java:comp/env environment naming context, resource manager access, and other enterprise bean access.
+- Identify correct and incorrect statements or examples about implementing a session bean as a web service endpoint, including rules for writing a web service endpoint interface and use of the @WebService and @WebMethod annotations.
+- Identify correct and incorrect statements or examples about the client view of a session bean, including the client view of a session object's life cycle, obtaining and using a session object, and session object identity.
+
+EJB 3.0 Message-Driven Bean Component Contract
+- Develop code that implements a Message-Driven Bean Class.
+- Identify correct and incorrect statements or examples about the interface(s) and methods a JMS Message-Driven bean must implement, and the required metadata.
+- Describe the use and behavior of a JMS message driven bean, including concurrency of message processing, message redelivery, and message acknowledgement.
+- Identify correct and incorrect statements or examples about the client view of a message driven bean.
+
+Java Persistence API Entities
+- Identify correct and incorrect statements or examples about the characteristics of Java Persistence entities.
+- Develop code to create valid entity classes, including the use of fields and properties, admissible types, and embeddable classes.
+- Identify correct and incorrect statements or examples about primary keys and entity identity, including the use of compound primary keys.
+- Implement association relationships using persistence entities, including the following associations: bidirectional for @OneToOne, @ManyToOne, @OneToMany, and @ManyToMany; unidirectional for @OneToOne, @ManyToOne, @OneToMany, and @ManyToMany.
+- Given a set of requirements and entity classes choose and implement an appropriate object-relational mapping for association relationships.
+- Given a set of requirements and entity classes, choose and implement an appropriate inheritance hierarchy strategy and/or an appropriate mapping strategy.
+- Describe the use of annotations and XML mapping files, individually and in combination, for object-relational mapping.
+
+Java Persistence Entity Operations
+- Describe how to manage entities, including using the EntityManager API and the cascade option.
+- Identify correct and incorrect statements or examples about entity instance lifecycle, including the new, managed, detached, and removed states.
+- Identify correct and incorrect statements or examples about EntityManager operations for managing an instance's state, including eager/lazy fetching, handling detached entities, and merging detached entities.
+- Identify correct and incorrect statements or examples about Entity Listeners and Callback Methods, including: @PrePersist, @PostPersist, @PreRemove, @PostRemove, @PreUpdate, @PostUpdate, and @PostLoad, and when they are invoked.
+- Identify correct and incorrect statements about concurrency, including how it is managed through the use of @Version attributes and optimistic locking.
+
+Persistence Units and Persistence Contexts
+- Identify correct and incorrect statements or examples about JTA and resource-local entity managers.
+- Identify correct and incorrect statements or examples about container-managed persistence contexts.
+- Identify correct and incorrect statements or examples about application-managed persistence contexts.
+- Identify correct and incorrect statements or examples about transaction management for persistence contexts, including persistence context propagation, the use of the EntityManager.joinTransaction() method, and the EntityTransaction API.
+- Identify correct and incorrect statements or examples about persistence units, how persistence units are packaged, and the use of the persistence.xml file.
+- Identify correct and incorrect statements or examples about the effect of persistence exceptions on transactions and persistence contexts.
+
+Java Persistence Query Language
+- Develop queries that use the SELECT clause to determine query results, including the use of entity types, use of aggregates, and returning multiple values.
+- Develop queries that use Java Persistence Query Language syntax for defining the domain of a query using JOIN clauses, IN, and prefetching.
+- Use the WHERE clause to restrict query results using conditional expressions, including the use of literals, path expressions, named and positional parameters, logical operators, the following expressions (and their NOT options): BETWEEN, IN, LIKE, NULL, EMPTY, MEMBER [OF], EXISTS, ALL, ANY, SOME, and functional expressions.
+- Develop Java Persistence Query Language statements that update a set of entities using UPDATE/SET and DELETE FROM.
+- Declare and use named queries, dynamic queries, and SQL (native) queries.
+- Obtain javax.persistence.Query objects and use the javax.persistence.Query API.
+
+Transactions
+- Identify correct and incorrect statements or examples about bean-managed transaction demarcation.
+- Identify correct and incorrect statements or examples about container-managed transaction demarcation, and given a list of transaction behaviors, match them with the appropriate transaction attribute.
+- Identify correct and incorrect statements or examples about transaction propagation semantics.
+- Identify correct and incorrect statements or examples about specifying transaction information via annotations and/or deployment descriptors.
+- Identify correct and incorrect statements or examples about the use of the EJB API for transaction management, including getRollbackOnly, setRollbackOnly and the SessionSynchronization interfaces.
+
+Exceptions
+- Identify correct and incorrect statements or examples about exception handling in EJB.
+- Identify correct and incorrect statements or examples about application exceptions and system exceptions in session beans and message-driven beans, and defining a runtime exception as an application exception.
+- Given a list of responsibilities related to exceptions, identify those which are the bean provider's, and those which are the responsibility of the container provider. Be prepared to recognize responsibilities for which neither the bean nor container provider is responsible.
+- Identify correct and incorrect statements or examples about the client's view of exceptions received from an enterprise bean invocation.
+- Given a particular method condition, identify the following: whether an exception will be thrown, the type of exception thrown, the container's action, and the client's view.
+
+Security Management
+- Match security behaviors to declarative security specifications (default behavior, security roles, security role references, and method permissions).
+- From a list of responsibilities, identify which roles are responsible for which aspects of security: application assembler, bean provider, deployer, container provider, system administrator, or server provider.
+- Identify correct and incorrect statements or examples about use of the isCallerInRole and getCallerPrincipal EJB programmatic security APIs.
+- Given a security-related deployment descriptor tag or annotation, identify correct and incorrect statements and/or code related to that tag.
