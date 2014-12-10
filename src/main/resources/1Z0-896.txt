@@ -1,0 +1,48 @@
+Duration: 120 minutes
+# Questions: 87
+Passing Score: 70%
+US exam cost: US$ 245
+
+Topics:
+
+Section 1: Essentials of JSF2.0
+- Identify the features of JSF such as Facelets, BookMarkable View, AJAX support and the benefits they bring in
+- Identify the life cycle stages of JSF, flow of request processing, and purpose of FacesContext
+- Design XHTML pages using JSF HTML tag library and demonstrate usage of JSF implicit objects
+- Develop and associate model components with views using CDI Named beans and identify the advantages of CDI Named beans over Managed Bean
+- Manage user and application state using various scopes like flash, conversation, application, request, and session
+- Implement internationalization/Localization using resource bundle and Locale class
+
+Section  2: JSF Navigation Model
+- Design JSF pages with static and dynamic implicit navigation
+- Configure faces-config.xml to implement navigation rules including conditional and redirection
+- Design bookmarkable views
+
+Section 3: Data Conversion and Validation model
+- Implement data conversion model using JSF standard converters
+- Create, configure, and use custom converters
+- Identify the best suited standard validator and implement it in a given JSF application
+- Create, configure, and use custom validators
+- Describe the usage of bean validation
+
+Section 4: Event Handling
+- Use CDI Named bean in a JSF application to handle action and valuechange events
+- Create and implement listeners to handle events
+- Develop JSF application that handle life cycle events
+- Implement asynchronous events using AJAX
+
+Section 5:  Data table and Composite Components
+- Design a DataTable with header and footer to populate and manipulate data from various components like Array, List, ResultSet, DataModel and describe the differences between <f:dataTable> and <ui:repeat/>
+- Implement composite components in JSF application and enhance it using AJAX
+- Implement templates in a JSF application and describe the differences between <ui:composition/> and <ui:decorate/>
+
+Section 6: Custom Components
+- Identify when and how to use custom components and custom renderers.
+- Enhance JSF application using HTML5 components
+
+Section 7: Security
+- Configure security for JSF application using authorization and authentication techniques
+
+Section 8: Test, Package, and Deploy a web application
+- Implement efficient error handling and debugging techniques in a JSF application
+- Configure and deploy a JSF application

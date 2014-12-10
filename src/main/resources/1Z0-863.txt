@@ -1,0 +1,84 @@
+Duration: 120 minutes
+# Questions: 48
+Passing Score: 60%
+US exam cost: US$ 245
+
+Topics:
+- Given XML documents, schemas, and fragments determine whether their syntax and form are correct (according to W3C schema) and whether they conform to the WS-I Basic Profile 1.1.
+- Describe the use of XML schema in J2EE Web services.
+
+Section 2: SOAP 1.2 Web Service Standards
+- List and describe the encoding types used in a SOAP message.
+- Describe the SOAP Processing and Extensibility Model
+- Describe SOAP Message Construct and create a SOAP message that contains an attachment.
+
+Section 3: Describing and Publishing (WSDL and UDDI)
+- Explain the use of WSDL in Web services, including a description of WSDL's basic elements, binding mechanisms and the basic WSDL operation types as limited by the WS-I Basic Profile 1.1
+- Describe how WSDL enables one to separate the description of the abstract functionality offered by a service from concrete details of a service description such as "how" and "where" that functionality is offered.
+- Describe the Component Model of WSDL including Descriptions, Interfaces, Bindings, Services and Endpoints.
+- Describe the basic functions provided by the UDDI Publish and Inquiry APIs to interact with a UDDI business registry.
+
+Section 4: JAX-WS
+- Explain JAX-WS technology for building web services and client that communicate using XML.
+- Given a set of requirements for a Web service, such as transactional needs, and security requirements, design and develop Web service applications that use JAX-WS technology.
+- Describe the Integrated Stack (I-Stack) which consist of JAX-WS, JAXB, StAX, SAAJ.
+- Describe and compare JAX-WS development approaches.
+- Describe the features of JAX-WS including the usage of Java Annotations.
+- Describe the architecture of JAX_WS including the Tools SPI that define the contract between JAX-WS tools and Java EE.
+- Describe creating a Web Service using JAX-WS.
+- Describe JAX-WS Client Communications Models.
+- Given a set of requirements, design and develop a Web service client, such as a Java EE client and a stand-alone client, using JAX-WS.
+- Given a set of requirements, create and configure a Web service client that accesses a stateful Web service.
+
+Section 5: REST, JSON, SOAP and XML Processing APIs (JAXP, JAXB and SAAJ)
+- Describe the characteristics of REST Web Services.
+- Describe the characteristics of JSON Web Services.
+- Compare SOAP web services to REST Web Services.
+- Compare SOAP web services to JSON Web Services.
+- Describe the functions and capabilities of the APIs included within JAXP.
+- Describe the functions and capabilities of JAXB, including the JAXB process flow, such as XML-to-Java and Java-to-XML, and the binding and validation mechanisms provided by JAXB.
+- Create and use a SOAP message with attachments using the SAAJ APIs.
+
+Section 6: JAXR
+- Describe the function of JAXR in Web service architectural model, the two basic levels of business registry functionality supported by JAXR, and the function of the basic JAXR business objects and how they map to the UDDI data structures.
+- Create JAXR client to connect to a UDDI business registry, execute queries to locate services that meet specific requirements, and publish or update information about a business service.
+
+Section 7: J2EE Web Services
+- Identify the characteristics of and the services and APIs included in the Java EE platform.
+- Explain the benefits of using the Java EE platform for creating and deploying Web service applications.
+- Describe the functions and capabilities of the JAXP, DOM, SAX, StAX, JAXR, JAXB, JAX-WS and SAAJ in the Java EE platform.
+- Describe the role of the WS-I Basic Profile when designing Java EE Web services.
+
+Section 8: Security
+- Explain basic security mechanisms including: transport level security, such as basic and mutual authentication and SSL, message level security, XML encryption, XML Digital Signature, and federated identity and trust.
+- Identify the purpose and benefits of Web services security oriented initiatives and standards such as Username Token Profile, SAML, XACML, XKMS, WS-Security, and the Liberty Project.
+- Given a scenario, implement Java EE based web service web-tier and/or EJB-tier basic security mechanisms, such as mutual authentication, SSL, and access control.
+- Describe factors that impact the security requirements of a Web service, such as the relationship between the client and service provider, the type of data being exchanged, the message format, and the transport mechanism.
+- Describe WS-Policy that defines a base set of constructs that can be used and extended by other Web services specifications to describe a broad range of service requirements and capabilities.
+
+Section 9: Developing Web Services
+- Describe the steps required to configure, package, and deploy Java EE Web services and service clients, including a description of the packaging formats, such as .ear, .war, .jar, annotations and deployment descriptor settings.
+- Given a set of requirements, develop code to process XML files using the SAX, StAX, DOM, XSLT, and JAXB APIs.
+- Given an XML schema for a document style Web service create a WSDL file that describes the service and generate a service implementation.
+- Given a set of requirements, create code to create an XML-based, document style, Web service using the JAX-WS APIs.
+- Implement a SOAP logging mechanism for testing and debugging a Web service application using Java EE Web Service APIs.
+- Given a set of requirements, create code to handle system and service exceptions and faults received by a Web services client.
+
+Section 10: Web Services Interoperability Technologies
+- Describe WSIT, the features of each WSIT technology and the standards that WSIT.
+- Describe how to create a WSIT client from a Web Service Description Language (WSDL) file.
+- Describe how to configure Web Service providers and clients to use message optimization.
+- Create a Microsoft Windows Communication Foundation (WCF) client that accesses a Java Web Service.
+- Describes the best practices for production and consumption of data for interoperability between WCF Web Services and Java web service clients or between Java WebServices and WCF Web Service clients.
+
+Section 11: General Design and Architecture
+- Describe the characteristics of a service-oriented architecture and how Web Services fit this model.
+- Given a scenario, design a Java EE Web Service using Web Services Design Patterns (Asynchronous Interaction, JMS Bridge, Web Service Cache, Web Serive Broker), and Best Practices.
+- Describe how to handle the various types of return values, faults, errors, and exceptions that can occur during a Web service interaction.
+- Describe the role that Web Services play when integrating data, application functions, or business processes in a Java EE application.
+
+Section 12: Endpoint Design and Architecture
+- Given a scenario, design Web Service applications using information models that are either procedure-style or document-style.
+- Describe the function of the service interaction and processing layers in a Web Service.
+- Design a Web Service for an asynchronous, document-style process and describe how to refactor a Web Service from a synchronous to an asynchronous model.
+- Describe how the characteristics, such as resource utilization, conversational capabilities, and operational modes, of the various types of Web service clients impact the design of a Web service or determine the type of client that might interact with a particular service.

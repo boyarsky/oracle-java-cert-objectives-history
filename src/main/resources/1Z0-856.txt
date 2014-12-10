@@ -1,0 +1,9 @@
+Duration: 120 minutes
+# Questions: NA
+Passing Score: Subject to evaluation assignment.%
+US exam cost: US$ 245
+
+Topics:
+- List some of the major choices you must make during the implementation of the above.
+- List some of the main advantages and disadvantages of each of your choices.
+- Briefly justify your choices in terms of the comparison of design and implementation objectives with the advantages and disadvantages of each.

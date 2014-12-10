@@ -1,0 +1,72 @@
+Duration: 150 minutes
+# Questions: 68
+Passing Score: 54%
+US exam cost: US$ 245
+
+Topics:
+
+Section 1: JTWI (JSR 185) and Overview of JTWI-Compliant Wireless Applications
+- Identify the goals and characteristics of the JTWI specification (JSR 185), including the mandatory specifications, conditionally required specifications, and the minimum configuration. Compare the relationship and differences between JTWI and other wireless Java technologies.
+- Develop portable applications that are compatible with the requirements and restrictions an application programmer must adhere to, in order to ensure compatibility with a JTWI-compliant device, including resource minimums (standard-size application), clock resolution, and the use of preferred Multi-Purpose Internet Mail Extensions (MIME) names as applicable to Connected Limited Device Configuration (CLDC) 1.0 and 1.1, Mobile Information Device Profile (MIDP) 2.0, Wireless Messaging API (WMA) 1.1, and Mobile Media API (MMAPI) 1.1).
+
+Section 2: CLDC 1.0 and 1.1
+- 
+- Describe the ways in which a CLDC virtual machine does and does not adhere to the Java Language Specification (JLS) and the Java Virtual Machine specification.
+- Identify correct and incorrect statements or examples about CLDC classes including those derived from J2SE, and the CLDC-specific classes, including identifying which core J2SE classes are NOT included in CLDC, or have different behaviors (for example java.lang.String and io classes)
+- Given the differences and limitations of exception/error handling with CLDC devices, handle exceptions correctly.
+- Write code that effectively manages memory and garbage collection.
+
+Section 3: Security (Both CLDC and MIDP)
+- 
+- Identify correct and incorrect statements or examples about untrusted MIDlet suites.
+- Explain trusted MIDlet suite security authorization and permissions, including the process for MIDlet suite signing.
+- Explain requirements and process of using X.509 public key infrastructure (PKI) authentication for MIDlet suites.
+
+Section 4: Networking
+- 
+- Write code for MIDP 2.0 networking, and issues and limitations related to Hypertext Transfer Protocol (HTTP), HTTPS, and Transmission Control Protocol/Internet Protocol (TCP/IP) sockets and datagram, recognizing which connections are required and which are optional, as well as comparing the issues related to TCP/IP and User Datagram Protocol (UDP) datagrams.
+- Write code using the MIDP 2.0 classes in the javax.microedition.io package, including code that correctly opens, closes, and uses a network connection, using the implications of network blocking operations, scheme, connection number limitations, and character encoding.
+- Given a problem scenario, troubleshoot networking issues for MIDP 2.0.
+
+Section 5: Application Model, Delivery, Lifecycle, and Provisioning
+- 
+- Identify correct and incorrect statements or examples about the MIDP application model, including: the MIDP execution environment, MIDlet suites, MIDlet suite packaging (including the manifest and the application descriptor), discovering available services on the device, discovering which version of MIDP and CLDC is on the device.
+- Develop applications that correctly reflect a MIDlet's application lifecycle, including: the purpose of the MIDlet class, communication with the application management software, platform request API, valid MIDlet states and transitions, and the behavior that should and should NOT be implemented within different lifecycle methods (including the constructor).
+- Deploy a MIDP 2.0 application with the correct use of Java Application Descriptor (JAD) files and manifests.
+- Given an installation failure, analyze the problem and develop possible resolutions.
+- Given a set of requirements, develop applications that correctly implement MIDP 2.0 support for delayed or scheduled activities using timers and background threads.
+
+Section 6: MIDP Persistent Storage
+- 
+- Develop code that correctly implements adding, retrieving, modifying, and deleting individual records in a RecordStore, and converting RecordStore record data to and from byte arrays, and that reflects performance implications.
+- Identify correct and incorrect statements or examples about filtering, comparing, event listening, and enumerating records in a RecordStore.
+
+Section 7: Push Registry
+- 
+- Develop applications that correctly use MIDP 2.0 Push Registry including discovery, dynamic compared to static, and recognizing the types of connections that can and cannot be accepted.
+
+Section 8: MIDP User Interface (UI) API
+- 
+- Discuss the MIDP user interface high-level API including concurrency, portability, structure of the API, and interplay with the application manager.
+- Explain the MIDP user interface low-level API including font support, repainting, and coordinate system.
+- Given a set of requirements, develop interactive MIDP 2.0 user interface code with proper event-handling (including both the high-level and low-level APIs, repainting and threading issues).
+- Identify correct and incorrect statements or examples about the classes (including the class hierarchy) within the javax.microedition.lcdui package.
+- Compare and contrast high-level and low-level APIs, including layout techniques.
+- Explain requirements, issues, class hierarchy, and relationships between items and screens.
+
+Section 9: MIDP Game API
+- 
+- Compare and contrast the use of MIDP's GameCanvas class and the MIDP low-level canvas.
+- Given a set of requirements, develop code using MIDP's LayerManager class.
+- Given a set of requirements, develop code using MIDP's Layer, Sprite, and TiledLayer classes.
+
+Section 10: Media Using MIDP 2.0 and the MMAPI 1.1
+- 
+- Given a set of requirements, develop code that correctly uses MIDP support for sound including audio playback, tone generation, media flow controls (start, stop), media type controls (volume, tone), and media capabilities using "Manager", "Player", and "Control" objects, recognizing the difference between required and optional features.
+- Develop code that correctly uses MMAPI support for playback and recording of media, including the use of the "DataSource", "Player", and "Manager" objects, support for audio and video capture and playback, system properties queries, recognizing the difference between required and optional features.
+- Identify correct and incorrect statements or examples about the media class hierarchies in both MIDP 2.0 and MMAPI 1.1.
+
+Section 11: Wireless Messaging API 1.1
+- 
+- Explain the WMA's support for Short Message Service (SMS) and Cell Broadcast capabilities.
+- Identify correct and incorrect statements or examples about WMA including the WMA addressing scheme, client vs. server connections, WMA-related exceptions, WMA-related security issues, message size limitation, message creation, sending, synchronous compared to asynchronous message receipt, and the relationship between WMA and Push Registry.

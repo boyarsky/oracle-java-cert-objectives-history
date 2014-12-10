@@ -1,0 +1,10 @@
+Duration: 6 months from assignment purchase**
+# Questions: NA
+Passing Score: Subject to validation of assignment%
+US exam cost: US$ 245
+
+Topics:
+- A graphical user interface demonstrating good principles of design
+- A network connection, using a specified protocol, to connect to an information server
+- A network server, which connects to a previously specified Java technology database
+- A database, created by extending the functionality of a previously written piece of code, for which only limited documentation is available
