@@ -50,6 +50,10 @@ public class CheckForNewOrRemovedExamsIT {
 		Set<String> onOracleListButNotTested = new HashSet<>(
 				examNumbersFromOracle);
 		onOracleListButNotTested.removeAll(examNumbersTested);
+		
+		//TODO remove once Oracle decides whether exam for Java SE 8 Upgrade begins with 1Z0 or 1Z1
+		testedButRemovedFromOracleList.remove("1Z0-810");
+		onOracleListButNotTested.remove("1Z1-810");
 
 		assertEquals(testedButRemovedFromOracleList
 				+ "\nare checked for currency in this test project, "

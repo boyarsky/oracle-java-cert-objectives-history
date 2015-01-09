@@ -38,7 +38,10 @@ public enum CertsToCheckEnum {
 			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-854"),
 	OCJP_JAVA_6_UPGRADE(
 			"1Z0-852",
-			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-852"),		
+			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-852"),
+	JAVA_8_UPGRADE(
+			"1Z0-810",
+			"https://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-810"),
 			
 			
     // ----------------------------------------------------	
