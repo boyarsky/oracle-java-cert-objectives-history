@@ -128,9 +128,9 @@ public enum CertsToCheckEnum {
 	DEVELOPER_6_ESSAY(
 			"1Z0-856",
 			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-856"),
-//	DEVELOPER_6_RESUBMISSION(
-//			"1Z0-857",
-//			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-857"),
+	DEVELOPER_6_RESUBMISSION(
+			"1Z0-857",
+			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-857"),
 	;
 	
 	
