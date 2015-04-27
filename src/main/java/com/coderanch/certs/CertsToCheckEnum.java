@@ -27,9 +27,6 @@ public enum CertsToCheckEnum {
 	OCPJP_JAVA_8(
 			"1Z0-809",
 			"https://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-809"),
-	JAVA_FOUNDATION(
-			"1Z0-811",
-			"https://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-811"),		
 	JAVA_7_UPGRADE(
 			"1Z0-805",
 			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-805"),

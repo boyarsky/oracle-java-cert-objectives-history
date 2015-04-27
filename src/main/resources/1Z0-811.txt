@@ -1,6 +1,0 @@
-Duration: 2.5-3.5
-# Questions: 150-225
-Passing Score: TBD%
-US exam cost: US$ 50
-
-Topics:

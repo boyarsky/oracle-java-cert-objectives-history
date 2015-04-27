@@ -80,7 +80,8 @@ public class CheckForChangesIT {
 	 */
 	private String getCDataForTag(String tag) {
 		NodeList nodeList = doc.getElementsByTagName(tag);
-		assertEquals("must be exactly one tag named " + tag, 1,
+		assertEquals("must be exactly one tag named " + tag + " for "
+				+ certToCheck + " in " + certToCheck.getExamNumber(), 1,
 				nodeList.getLength());
 		Node cdata = nodeList.item(0).getFirstChild();
 		String value = cdata.getNodeValue();
@@ -98,8 +99,7 @@ public class CheckForChangesIT {
 		data.append("Duration: " + getCDataForTag("DURATION") + "\n");
 		data.append("# Questions: " + getCDataForTag("NUMBER_OF_QUESTIONS")
 				+ "\n");
-		data.append("Passing Score: " + getCDataForTag("PASSING_SCORE")
-				+ "\n");
+		data.append("Passing Score: " + getCDataForTag("PASSING_SCORE") + "\n");
 		data.append("US exam cost: " + getCDataForTag("PRICE") + "\n");
 		data.append("\n");
 
@@ -116,8 +116,8 @@ public class CheckForChangesIT {
 	 * run.
 	 */
 	private void assertSameAsExisting(String actual) throws Exception {
-		Path path = Paths.get("src/main/resources/" + certToCheck.getExamNumber()
-				+ ".txt");
+		Path path = Paths.get("src/main/resources/"
+				+ certToCheck.getExamNumber() + ".txt");
 		assertTrue(path + " does not exist for " + certToCheck
 				+ ". Please create it with contents: \n" + actual,
 				Files.exists(path));
