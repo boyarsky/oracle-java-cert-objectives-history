@@ -61,6 +61,9 @@ public class CheckForNewOrRemovedExamsIT {
 		
 		testedButRemovedFromOracleList.remove("1Z0-811");
 		onOracleListButNotTested.remove("1Z1-811");
+		
+		testedButRemovedFromOracleList.remove("1Z0-813");
+		onOracleListButNotTested.remove("1Z1-813");
 
 		assertEquals(testedButRemovedFromOracleList
 				+ "\nare checked for currency in this test project, "
