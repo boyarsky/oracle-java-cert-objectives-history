@@ -1,7 +1,7 @@
-Duration: 150-225
-# Questions: Beta exam score reports will be available at <a href="http://certview.oracle.com">CertView</a> approximately 11 weeks after the close of the Beta Exam. You will receive an email from Pearson VUE with instructions on how to access your score.
+Duration: TBD
+# Questions: TBD
 Passing Score: TBD%
-US exam cost: US$ 50
+US exam cost: US$ 245
 
 Topics:
 - Describe Java inner classes and develop the code that uses Java inner classes (such as: nested class, static class, local class and anonymous classes)
