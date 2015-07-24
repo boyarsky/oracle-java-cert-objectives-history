@@ -18,7 +18,7 @@ Design Patterns
 
 Database Applications with JDBC
 - Describe the interfaces that make up the core of the JDBC API (including the Driver, Connection, Statement, and ResultSet interfaces and their relationship to provider implementations)
-- Identify the components required to connect to a database using  the DriverManager class (including the jdbc URL)
+- Identify the components required to connect to a database using the DriverManager class (including the jdbc URL)
 - Construct and use RowSet objects using the RowSetProvider class and the RowSetFactory interface
 - Use JDBC transactions (including disabling auto-commit mode, committing and rolling back transactions, and setting and rolling back to savepoints)
 - Submit queries and read results from the database (including creating statements, returning result sets, iterating through the results, and properly closing result sets, statements, and connections)

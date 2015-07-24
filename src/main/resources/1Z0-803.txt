@@ -39,13 +39,13 @@ Using Loop Constructs
 
 Working with Methods and Encapsulation
 - Create methods with arguments and return values
-- Apply the static keyword  to methods and fields
+- Apply the static keyword to methods and fields
 - Create an overloaded method
 - Differentiate between default and user defined constructors
 - Create and overload constructors
 - Apply access modifiers
 - Apply encapsulation principles to a class
-- Determine the effect upon object references and primitive values when they are passed  into methods that change the values
+- Determine the effect upon object references and primitive values when they are passed into methods that change the values
 
 Working with Inheritance
 - Implement inheritance

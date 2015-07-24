@@ -76,7 +76,7 @@ public class CheckForChangesIT {
 	}
 
 	/*
-	 * Remove &lt;p&gt; tags and whitespace if present
+	 * Remove p, img and a tags along with whitespace if present
 	 */
 	private String getCDataForTag(String tag) {
 		NodeList nodeList = doc.getElementsByTagName(tag);
@@ -85,8 +85,23 @@ public class CheckForChangesIT {
 				nodeList.getLength());
 		Node cdata = nodeList.item(0).getFirstChild();
 		String value = cdata.getNodeValue();
+		System.out.println(value);
 		value = value.replaceAll("^\\s*<p>", "");
 		value = value.replaceAll("</p>\\s+", "");
+		value = value.replaceAll("<img[^>]*>", "");
+		value = value.replaceAll("<a[^>]*>", "");
+		value = value.replaceAll("</a>", "");
+		value = value.replaceAll("&nbsp;", "");
+		
+		System.out.println("---------------------------");
+		System.out.println(value);
+		return value.trim();
+	}
+	
+	private String getCDataForTagWithoutDivs(String tag) {
+		String value = getCDataForTag(tag);
+		value = value.replaceAll("<div[^>]*>", "");
+		value = value.replaceAll("</div>", "");
 		return value.trim();
 	}
 
@@ -96,11 +111,11 @@ public class CheckForChangesIT {
 	private String convertToString() throws Exception {
 		StringBuilder data = new StringBuilder();
 
-		data.append("Duration: " + getCDataForTag("DURATION") + "\n");
-		data.append("# Questions: " + getCDataForTag("NUMBER_OF_QUESTIONS")
+		data.append("Duration: " + getCDataForTagWithoutDivs("DURATION") + "\n");
+		data.append("# Questions: " + getCDataForTagWithoutDivs("NUMBER_OF_QUESTIONS")
 				+ "\n");
-		data.append("Passing Score: " + getCDataForTag("PASSING_SCORE") + "\n");
-		data.append("US exam cost: " + getCDataForTag("PRICE") + "\n");
+		data.append("Passing Score: " + getCDataForTagWithoutDivs("PASSING_SCORE") + "\n");
+		data.append("US exam cost: " + getCDataForTagWithoutDivs("PRICE") + "\n");
 		data.append("\n");
 
 		TopicListParser parser = new TopicListParser(getCDataForTag("TOPICS"));

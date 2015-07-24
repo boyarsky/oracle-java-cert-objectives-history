@@ -5,7 +5,7 @@ US exam cost: US$ 245
 
 Topics:
 - Identify the effects of an object-oriented approach to system design including the effect of encapsulation, inheritance, and use of interfaces.
-- Identify how the Separation of Concerns principle applies to the component model of a Java EE application; including client, the web and business component containers,  and the integration and resource layers.
+- Identify how the Separation of Concerns principle applies to the component model of a Java EE application; including client, the web and business component containers, and the integration and resource layers.
 - Identify the correct interpretation of Separation of Concerns as it applies to the Java EE service layers, including component APIs, run-time containers, the operating system, and hardware resources.
 - Identify non-functional and quality-of-service requirements that influence application design, including trade-offs in performance, availability, and serviceability.
 
@@ -38,7 +38,7 @@ Web Tier Technologies
 Design Patterns
 - Demonstrate knowledge of Java EE design patterns including: Service Starter, Singleton, Bean Locator, Resource Binder, Dependency Injection, Payload Extractor, Context Holder, and Thread Tracker.
 - Select an appropriate pattern for a given application challenge from the following: Facade, Strategy, Observer, Composite, and Abstract Factory.
-- Identify a design pattern, using a description of its features, from the following:  Facade, Strategy, Observer, Composite, and Abstract Factory.
+- Identify a design pattern, using a description of its features, from the following: Facade, Strategy, Observer, Composite, and Abstract Factory.
 - Identify the use of the law of leaky abstractions or a specific anti-pattern in a given scenario.
 
 Security
@@ -46,4 +46,4 @@ Security
 - Select appropriate locations to implement Java EE security technologies or features in a UML component and deployment diagram.
 - Classify security threats to an enterprise application select measures an architect can propose to mitigate them.
 - Identify techniques associated with declarative and programmatic security, including the use of annotations, deployment descriptors, and JAAS technology.
-- Identify the security technologies  that apply to an application’s code, messaging and transport layers
+- Identify the security technologies that apply to an application’s code, messaging and transport layers

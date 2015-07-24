@@ -21,7 +21,7 @@ Basic Java Elements
 - Describe the java.lang package
 
 Working with Java Data Types
-- Declare and initialize variables including a  variable using final
+- Declare and initialize variables including a variable using final
 - Cast a value from one data type to another including automatic and manual promotion
 - Declare and initialize a String variable
 
@@ -42,7 +42,7 @@ Working with the Random and Math Classes
 - Use the Math class
 
 Using Decision Statements
-- Use the decision making statement  (if-then and if-then-else)
+- Use the decision making statement (if-then and if-then-else)
 - Use the switch statement
 - Compare how == differs between primitives and objects
 - Compare two String objects by using the compareTo and equals methods
@@ -66,8 +66,6 @@ Arrays and ArrayLists
 - Create and manipulate an ArrayList
 - Traverse the elements of an ArrayList by using iterators and loops including the enhanced for loop
 - Compare an array and an ArrayList
-
-
 
 Classes and Constructors
 - Create a new class including a main method

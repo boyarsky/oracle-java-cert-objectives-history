@@ -13,7 +13,7 @@ Section 1: Essentials of JSF2.0
 - Manage user and application state using various scopes like flash, conversation, application, request, and session
 - Implement internationalization/Localization using resource bundle and Locale class
 
-Section  2: JSF Navigation Model
+Section 2: JSF Navigation Model
 - Design JSF pages with static and dynamic implicit navigation
 - Configure faces-config.xml to implement navigation rules including conditional and redirection
 - Design bookmarkable views
@@ -31,7 +31,7 @@ Section 4: Event Handling
 - Develop JSF application that handle life cycle events
 - Implement asynchronous events using AJAX
 
-Section 5:  Data table and Composite Components
+Section 5: Data table and Composite Components
 - Design a DataTable with header and footer to populate and manipulate data from various components like Array, List, ResultSet, DataModel and describe the differences between <f:dataTable> and <ui:repeat/>
 - Implement composite components in JSF application and enhance it using AJAX
 - Implement templates in a JSF application and describe the differences between <ui:composition/> and <ui:decorate/>

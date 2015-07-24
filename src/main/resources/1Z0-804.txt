@@ -42,7 +42,7 @@ Generics and Collections
 
 String Processing
 - Search, parse and build strings (including Scanner, StringTokenizer, StringBuilder, String and Formatter)
-- Search, parse, and replace strings by using regular expressions, using expression patterns for matching limited to: . (dot), * (star), + (plus), ?, \d, \D, \s, \S,  \w, \W, \b. \B, [], ().
+- Search, parse, and replace strings by using regular expressions, using expression patterns for matching limited to: . (dot), * (star), + (plus), ?, \d, \D, \s, \S, \w, \W, \b. \B, [], ().
 - Format strings using the formatting parameters: %b, %c, %d, %f, and %s in format strings.
 
 Exceptions and Assertions
