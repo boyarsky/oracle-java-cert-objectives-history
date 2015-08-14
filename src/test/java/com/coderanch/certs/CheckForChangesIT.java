@@ -102,6 +102,7 @@ public class CheckForChangesIT {
 		String value = getCDataForTag(tag);
 		value = value.replaceAll("<div[^>]*>", "");
 		value = value.replaceAll("</div>", "");
+		value = value.replaceAll("<p>", "");
 		return value.trim();
 	}
 

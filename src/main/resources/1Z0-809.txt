@@ -79,7 +79,6 @@ Building Database Applications with JDBC
 - Submit queries and read results from the database including creating statements, returning result sets, iterating through the results, and properly closing result sets, statements, and connections
 
 Localization
-- Describe the advantages of localizing an application
 - Read and set the locale by using the Locale object
 - Create and read a Properties file
 - Build a resource bundle for each locale and load a resource bundle in an application

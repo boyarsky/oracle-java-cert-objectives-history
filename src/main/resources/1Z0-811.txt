@@ -1,7 +1,7 @@
 Duration: TBD
 # Questions: TBD
 Passing Score: TBD%
-US exam cost: 
+US exam cost: US$ 90
 
 Topics:
 - Describe the features of Java
