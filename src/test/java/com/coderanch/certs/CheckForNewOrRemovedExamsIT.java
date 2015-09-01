@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.io.*;
 import java.util.*;
+import java.util.stream.*;
 
 import javax.xml.parsers.*;
 import javax.xml.xpath.*;
@@ -51,20 +52,10 @@ public class CheckForNewOrRemovedExamsIT {
 				examNumbersFromOracle);
 		onOracleListButNotTested.removeAll(examNumbersTested);
 		
-		//TODO remove once Oracle decides whether exam for Java SE 8 Upgrade begins with 1Z0 or 1Z1
-		testedButRemovedFromOracleList.remove("1Z0-810");
-		onOracleListButNotTested.remove("1Z1-810");
+		// 
+		testedButRemovedFromOracleList = normalizeBetaExamNumbers(testedButRemovedFromOracleList);
+		onOracleListButNotTested = normalizeBetaExamNumbers(onOracleListButNotTested);
 		
-		//TODO remove when Oracle finishing launching test
-		testedButRemovedFromOracleList.remove("1Z0-809");
-		onOracleListButNotTested.remove("1Z1-809");
-		
-		testedButRemovedFromOracleList.remove("1Z0-811");
-		onOracleListButNotTested.remove("1Z1-811");
-		
-		testedButRemovedFromOracleList.remove("1Z0-813");
-		onOracleListButNotTested.remove("1Z1-813");
-
 		assertEquals(testedButRemovedFromOracleList
 				+ "\nare checked for currency in this test project, "
 				+ "\nbut no longer on Oracle's list. "
@@ -75,6 +66,13 @@ public class CheckForNewOrRemovedExamsIT {
 				+ "\nare on Oracle's list, but not tested in this project, "
 				+ "\nNext step: add to enum so start checking", 0,
 				onOracleListButNotTested.size());
+	}
+
+	/*
+	 * normalize to change 1Z1 to 1Z0 for the exam prefix
+	 */
+	private Set<String> normalizeBetaExamNumbers(Set<String> testedButRemovedFromOracleList) {
+		return testedButRemovedFromOracleList.stream().map(s -> s.replaceFirst("^1Z1", "1Z0")).collect(Collectors.toSet());
 	}
 
 	private void setExamNumbersTested() {
