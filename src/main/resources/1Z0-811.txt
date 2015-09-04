@@ -1,6 +1,6 @@
-Duration: TBD
-# Questions: TBD
-Passing Score: TBD%
+Duration: 150 minutes
+# Questions: 75
+Passing Score: 65%
 US exam cost: US$ 90
 
 Topics:
