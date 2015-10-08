@@ -1,6 +1,6 @@
 Duration: 150 minutes
-# Questions: 80
-Passing Score: 60%
+# Questions: 70
+Passing Score: 60%%
 US exam cost: US$ 245
 
 Topics:
