@@ -88,7 +88,7 @@ public class CheckForNewOrRemovedExamsIT {
 		String source = driver.getPageSource();
 
 		// currently called "Java" section in objectives
-		String xpath = "//FAMILY[NAME[contains(text(), 'Java')]]//NUMBER";
+		String xpath = "//FAMILY[NAME[contains(text(), 'Java') and not(contains(text(), 'Cloud'))]]//NUMBER";
 		NodeList nodeList = evaluateWithXpath(xpath, source);
 		assertNotEquals(
 				"no matching exams. maybe Oracle changed the XML format?", 0,
