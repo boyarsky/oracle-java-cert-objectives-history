@@ -42,7 +42,7 @@ Java Stream API
 - Develop code that uses Stream data methods and calculation methods
 - Sort a collection using Stream API
 - Save results to a collection using the collect method and group/partition data using the Collectors class
-- Use of merge() and flatMap() methods of the Stream API
+- Use flatMap() methods in the Stream API
 
 Exceptions and Assertions
 - Use try-catch and throw statements
