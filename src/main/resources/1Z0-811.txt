@@ -4,6 +4,8 @@ Passing Score: 65%
 US exam cost: US$ 90
 
 Topics:
+
+What Is Java?
 - Describe the features of Java
 - Describe the real-world applications of Java
 
