@@ -18,11 +18,11 @@ Using Built-in Lambda Types
 - Develop code that uses the primitive and binary variations of the base interfaces of the java.util.function package
 - Develop code that uses a method reference, including refactoring a lambda expression to a method reference
 
-Filtering Collections with Lambdas
+Java Collections and Streams with Lambdas
 - Develop code that iterates a collection by using the forEach() method and method chaining
 - Describe the Stream interface and pipelines
 - Filter a collection by using lambda expressions
-- Identify the lambda operations that are lazy
+- Identify the operations, on stream, that are lazy
 
 Collection Operations with Lambda
 - Develop code to extract data from an object by using the map() method
