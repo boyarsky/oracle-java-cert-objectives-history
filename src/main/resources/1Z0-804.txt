@@ -5,6 +5,18 @@ US exam cost: US$ 245
 
 Topics:
 
+Assume the following:
+- 
+- 
+- 
+- All classes are in one file
+- Each class is contained in a separate file, and all files are in one directory
+- 
+- 
+- 
+
+TOPICS
+
 Java Class Design
 - Use access modifiers: private, protected, and public
 - Override methods
