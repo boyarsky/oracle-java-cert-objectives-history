@@ -9,7 +9,6 @@ Assume the following:
 - 
 - 
 - 
-- All classes are in one file
 - Each class is contained in a separate file, and all files are in one directory
 - 
 - 
