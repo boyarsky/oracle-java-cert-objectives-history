@@ -41,7 +41,7 @@ Language Enhancements
 - Use static and default methods of an interface including inheritance rules for a default method
 
 Concurrency
-- Use collections from the java.util.concurrent package with a focus on the advantages over and differences from the traditional java.util collections
+- Use classes from the java.util.concurrent package including CyclicBarrier and CopyOnWriteArrayList with a focus on the advantages over and differences from the traditional java.util collections
 - Use Lock, ReadWriteLock, and ReentrantLock classes in the java.util.concurrent.locks and java.util.concurrent.atomic packages to support lock-free thread-safe programming on single variables
 - Use Executor, ExecutorService, Executors, Callable, and Future to execute tasks using thread pools
 - Use the parallel Fork/Join Framework
@@ -54,7 +54,7 @@ Localization
 - Work with dates and times across time zones and manage changes resulting from daylight savings
 
 Java File I/O (NIO.2)
-- Operate on file and directory paths by using the Path class
+- Operate on file and directory paths by using the Paths class
 - Check, delete, copy, or move a file or directory by using the Files class
 - Recursively access a directory tree by using the DirectoryStream and FileVisitor interfaces
 - Find a file by using the PathMatcher interface, and use Java SE 8 I/O improvements, including Files.find(), Files.walk(), and lines() methods
