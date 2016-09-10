@@ -87,7 +87,7 @@ Handling Exceptions
 - Create a try-catch block and determine how exceptions alter normal program flow
 - Describe the advantages of Exception handling
 - Create and invoke a method that throws an exception
-- "Recognize common exception classes (such as NullPointerException, ArithmeticExcpetion, ArrayIndexOutOfBoundsException, ClassCastException)"
+- Recognize common exception classes (such as NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException, ClassCastException)
 
 Working with Selected classes from the Java API
 - Manipulate data using the StringBuilder class and its methods
