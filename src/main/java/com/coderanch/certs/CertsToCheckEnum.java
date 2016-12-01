@@ -94,9 +94,6 @@ public enum CertsToCheckEnum {
 	/*
 	 * Developer 
 	 */
-	DEVELOPER_6_ASSIGNMENT(
-			"1Z0-855",
-			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-855"),		
 	DEVELOPER_6_ESSAY(
 			"1Z0-856",
 			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-856"),
