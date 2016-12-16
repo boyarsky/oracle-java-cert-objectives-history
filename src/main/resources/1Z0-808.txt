@@ -1,5 +1,5 @@
 Duration: 150
-# Questions: 77
+# Questions: 80
 Passing Score: 65%
 US exam cost: US$ 245
 
@@ -39,7 +39,7 @@ TOPICS
 Java Basics
 - Define the scope of variables
 - Define the structure of a Java class
-- Create executable Java applications with a main method; run a Java program from the command line; including console output.
+- Create executable Java applications with a main method; run a Java program from the command line; produce console output
 - Import other Java packages to make them accessible in your code
 - Compare and contrast the features and components of Java such as: platform independence, object orientation, encapsulation, etc.
 
@@ -48,17 +48,17 @@ Working With Java Data Types
 - Differentiate between object reference variables and primitive variables
 - Know how to read or write to object fields
 - Explain an Object's Lifecycle (creation, "dereference by reassignment" and garbage collection)
-- Develop code that uses wrapper classes such as Boolean, Double, and Integer.
+- Develop code that uses wrapper classes such as Boolean, Double, and Integer
 
 Using Operators and Decision Constructs
-- Use Java operators; including parentheses to override operator precedence
+- Use Java operators; use parentheses to override operator precedence
 - Test equality between Strings and other objects using == and equals ()
 - Create if and if/else and ternary constructs
 - Use a switch statement
 
 Creating and Using Arrays
 - Declare, instantiate, initialize and use a one-dimensional array
-- Declare, instantiate, initialize and use multi-dimensional array
+- Declare, instantiate, initialize and use multi-dimensional arrays
 
 Using Loop Constructs
 - Create and use while loops
@@ -70,14 +70,14 @@ Using Loop Constructs
 Working with Methods and Encapsulation
 - Create methods with arguments and return values; including overloaded methods
 - Apply the static keyword to methods and fields
-- Create and overload constructors; including impact on default constructors
+- Create and overload constructors; differentiate between default and user defined constructors
 - Apply access modifiers
 - Apply encapsulation principles to a class
 - Determine the effect upon object references and primitive values when they are passed into methods that change the values
 
 Working with Inheritance
 - Describe inheritance and its benefits
-- Develop code that demonstrates the use of polymorphism; including overriding and object type versus reference type
+- Develop code that makes use of polymorphism; develop code that overrides methods; differentiate between the type of a reference and the type of an object
 - Determine when casting is necessary
 - Use super and this to access objects and constructors
 - Use abstract classes and interfaces
@@ -91,7 +91,7 @@ Handling Exceptions
 
 Working with Selected classes from the Java API
 - Manipulate data using the StringBuilder class and its methods
-- Creating and manipulating Strings
-- Create and manipulate calendar data using classes from java.time.LocalDateTime, java.time.LocalDate, java.time.LocalTime, java.time.format.DateTimeFormatter, java.time.Period
+- Create and manipulate Strings
+- Create and manipulate calendar data using classes from java.time.LocalDateTime, java.time.LocalDate, java.time.LocalTime, java.time.format.DateTimeFormatter, java.time
 - Declare and use an ArrayList of a given type
 - Write a simple Lambda expression that consumes a Lambda Predicate expression
