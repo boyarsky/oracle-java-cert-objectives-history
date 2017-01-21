@@ -25,7 +25,7 @@ Unintended line breaks
 
 Code fragments
 
-: A code fragment is a small section of source code that is presented without its context. Assume that all necessary supporting code exists is present and that the supporting environment fully supports the correct compilation and execution of the code shown and its omitted environment.
+: A code fragment is a small section of source code that is presented without its context. Assume that all necessary supporting code exists and that the supporting environment fully supports the correct compilation and execution of the code shown and its omitted environment.
 - 
 
 Descriptive comments
