@@ -76,7 +76,7 @@ public class CheckForNewOrRemovedExamsIT {
 	}
 
 	private void setExamNumbersTested() {
-		examNumbersTested = new HashSet<String>();
+		examNumbersTested = new HashSet<>();
 		for (CertsToCheckEnum element : CertsToCheckEnum.values()) {
 			examNumbersTested.add(element.getExamNumber());
 		}

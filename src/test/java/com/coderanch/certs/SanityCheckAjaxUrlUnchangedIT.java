@@ -35,7 +35,7 @@ public class SanityCheckAjaxUrlUnchangedIT {
 		assertTrue(
 				url
 						+ " no longer uses same page for AJAX data; please check program",
-				source.contains("var url=\"/pls/web_prod-plq-dad/oucertapp_bo.getExamData\";"));
+				source.contains("var site_section = \"Certification\";"));
 	}
 
 }
