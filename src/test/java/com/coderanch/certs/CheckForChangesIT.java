@@ -92,6 +92,7 @@ public class CheckForChangesIT {
 		value = value.replaceAll("<a[^>]*>", "");
 		value = value.replaceAll("</a>", "");
 		value = value.replaceAll("&nbsp;", "");
+		value = value.replaceAll("Exam topics in Spanish", "");
 		
 		System.out.println("---------------------------");
 		System.out.println(value);
