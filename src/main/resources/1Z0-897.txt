@@ -8,7 +8,7 @@ Topics:
 
 Missing package and import statements
 
-: If sample code do not include package or import statements, and the question does not explicitly refer to these missing statements, then assume that all sample code is in the same package, and import statements exist to support them.
+: If sample code do not include package or import statements, and the question does not explicitly refer to these missing statements, then assume that all sample code is in the same package, or import statements exist to support them.
 - 
 
 No file or directory path names for classes
