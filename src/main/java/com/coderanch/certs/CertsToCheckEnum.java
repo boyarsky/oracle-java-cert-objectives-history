@@ -86,16 +86,7 @@ public enum CertsToCheckEnum {
 	JSF_6(
 			"1Z0-896",
 			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-896"),		
-					
-	// ----------------------------------------------------		
-	/*
-	 * Developer 
-	 */
-	DEVELOPER_6_RESUBMISSION(
-			"1Z0-857",
-			"http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-857"),
 	;
-	
 	// ----------------------------------------------------
 	String examNumber;
 	String url;
