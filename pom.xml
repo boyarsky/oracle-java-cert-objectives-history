@@ -5,6 +5,8 @@
 	<artifactId>oracle-java-cert-objectives-history</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
+		<java.version>1.8</java.version>
+		<surefire.version>2.19.1</surefire.version>
 		<junit.version>4.12</junit.version>
 		<junit.jupiter.version>5.0.0-RC2</junit.jupiter.version>
 		<junit.vintage.version>${junit.version}.0-RC2</junit.vintage.version>
@@ -14,7 +16,7 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-failsafe-plugin</artifactId>
-				<version>2.18</version>
+				<version>${surefire.version}</version>
 				<executions>
 					<execution>
 						<goals>
@@ -23,18 +25,25 @@
 						</goals>
 					</execution>
 				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.junit.platform</groupId>
+						<artifactId>junit-platform-surefire-provider</artifactId>
+						<version>${junit.platform.version}</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.0</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
 				</configuration>
 			</plugin>
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.19.1</version>
+				<version>${surefire.version}</version>
 				<configuration>
 					<includes>
 						<include>**/Test*.java</include>
@@ -65,9 +74,9 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-		<groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
-            <version>${junit.jupiter.version}</version>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
+			<version>${junit.jupiter.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
