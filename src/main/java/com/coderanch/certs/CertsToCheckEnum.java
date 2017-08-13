@@ -1,5 +1,8 @@
 package com.coderanch.certs;
 
+import java.util.*;
+import java.util.stream.*;
+
 /**
  * Maps the cert we are monitoring with the current URL
  * 
@@ -102,5 +105,11 @@ public enum CertsToCheckEnum {
 
 	public String getExamNumber() {
 		return examNumber;
+	}
+	
+	public static Set<String> getSetOfExamNumbers() {
+		return Stream.of(CertsToCheckEnum.values())
+				.map(CertsToCheckEnum::getExamNumber)
+				.collect(Collectors.toSet());
 	}
 }

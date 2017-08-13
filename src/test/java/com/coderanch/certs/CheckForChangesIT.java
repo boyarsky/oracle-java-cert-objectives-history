@@ -17,7 +17,6 @@ public class CheckForChangesIT {
 	private static final String XML_URL = "http://education.oracle.com/pls/web_prod-plq-dad/oucertapp_bo.getExamData?p_exam_id=";
 
 	private CertsToCheckEnum certToCheck;
-	private InputStream stream;
 	private Document doc;
 
 	// ----------------------------------------------------
@@ -28,7 +27,7 @@ public class CheckForChangesIT {
 		certToCheck = c;
 		String url = XML_URL + certToCheck.getExamNumber();
 		try (InputStream stream = new URL(url).openStream()) {
-			parseDocument();
+			parseDocument(stream);
 			String currentData = convertToString();
 			assertSameAsExisting(currentData);
 		}
@@ -36,7 +35,7 @@ public class CheckForChangesIT {
 
 	// ----------------------------------------------------
 
-	private void parseDocument() throws Exception {
+	private void parseDocument(InputStream stream) throws Exception {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = factory.newDocumentBuilder();
 		doc = builder.parse(stream);

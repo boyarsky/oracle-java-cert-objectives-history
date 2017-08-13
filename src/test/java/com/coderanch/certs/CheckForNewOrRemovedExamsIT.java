@@ -52,7 +52,6 @@ public class CheckForNewOrRemovedExamsIT {
 				examNumbersFromOracle);
 		onOracleListButNotTested.removeAll(examNumbersTested);
 
-		//
 		testedButRemovedFromOracleList = normalizeBetaExamNumbers(testedButRemovedFromOracleList);
 		onOracleListButNotTested = normalizeBetaExamNumbers(onOracleListButNotTested);
 
@@ -75,10 +74,7 @@ public class CheckForNewOrRemovedExamsIT {
 	}
 
 	private void setExamNumbersTested() {
-		examNumbersTested = new HashSet<>();
-		for (CertsToCheckEnum element : CertsToCheckEnum.values()) {
-			examNumbersTested.add(element.getExamNumber());
-		}
+		examNumbersTested = CertsToCheckEnum.getSetOfExamNumbers();
 	}
 
 	private void setCurrentExamListFromOracle() throws Exception {
