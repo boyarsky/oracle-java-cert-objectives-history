@@ -1,33 +1,19 @@
 package com.coderanch.certs;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.*;
 import java.net.*;
 import java.nio.file.*;
-import java.util.*;
 
 import javax.xml.parsers.*;
 
-import org.junit.*;
-import org.junit.runner.*;
-import org.junit.runners.*;
-import org.junit.runners.Parameterized.Parameters;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.*;
+import org.junit.jupiter.params.provider.*;
 import org.w3c.dom.*;
 
-@RunWith(Parameterized.class)
 public class CheckForChangesIT {
-
-	@Parameters
-	public static List<CertsToCheckEnum[]> suite() {
-		List<CertsToCheckEnum[]> result = new ArrayList<>();
-		for (CertsToCheckEnum element : CertsToCheckEnum.values()) {
-			result.add(new CertsToCheckEnum[] { element });
-		}
-		return result;
-	}
-
-	// ----------------------------------------------------
 
 	private static final String XML_URL = "http://education.oracle.com/pls/web_prod-plq-dad/oucertapp_bo.getExamData?p_exam_id=";
 
@@ -35,19 +21,9 @@ public class CheckForChangesIT {
 	private InputStream stream;
 	private Document doc;
 
-	public CheckForChangesIT(CertsToCheckEnum certToCheck) {
-		this.certToCheck = certToCheck;
-	}
-
 	// ----------------------------------------------------
 
-	@Before
-	public void connect() throws Exception {
-		String url = XML_URL + certToCheck.getExamNumber();
-		stream = new URL(url).openStream();
-	}
-
-	@After
+	@AfterEach
 	public void close() {
 		if (stream != null) {
 			try {
@@ -60,8 +36,13 @@ public class CheckForChangesIT {
 
 	// ----------------------------------------------------
 
-	@Test
-	public void upToDate() throws Exception {
+	@ParameterizedTest
+	@EnumSource(CertsToCheckEnum.class)
+	public void upToDate(CertsToCheckEnum c) throws Exception {
+		certToCheck = c;
+		String url = XML_URL + certToCheck.getExamNumber();
+		stream = new URL(url).openStream();
+
 		parseDocument();
 		String currentData = convertToString();
 		assertSameAsExisting(currentData);
@@ -80,9 +61,8 @@ public class CheckForChangesIT {
 	 */
 	private String getCDataForTag(String tag) {
 		NodeList nodeList = doc.getElementsByTagName(tag);
-		assertEquals("must be exactly one tag named " + tag + " for "
-				+ certToCheck + " in " + certToCheck.getExamNumber(), 1,
-				nodeList.getLength());
+		assertEquals(1, nodeList.getLength(), "must be exactly one tag named " + tag + " for "
+				+ certToCheck + " in " + certToCheck.getExamNumber());
 		Node cdata = nodeList.item(0).getFirstChild();
 		String value = cdata.getNodeValue();
 		value = value.replaceAll("^\\s*<p>", "");
@@ -94,7 +74,7 @@ public class CheckForChangesIT {
 		value = value.replaceAll("Exam topics in Spanish", "");
 		return value.trim();
 	}
-	
+
 	private String getCDataForTagWithoutDivs(String tag) {
 		String value = getCDataForTag(tag);
 		value = value.replaceAll("<div[^>]*>", "");
@@ -125,22 +105,19 @@ public class CheckForChangesIT {
 	// ----------------------------------------------------
 
 	/*
-	 * Fail if file not present (new cert) or something has changed since last
-	 * run.
+	 * Fail if file not present (new cert) or something has changed since last run.
 	 */
 	private void assertSameAsExisting(String actual) throws Exception {
 		Path path = Paths.get("src/main/resources/"
 				+ certToCheck.getExamNumber() + ".txt");
-		assertTrue(path + " does not exist for " + certToCheck
-				+ ". Please create it with contents: \n" + actual,
-				Files.exists(path));
+		assertTrue(Files.exists(path), path + " does not exist for " + certToCheck
+				+ ". Please create it with contents: \n" + actual);
 		String expected = new String(Files.readAllBytes(path));
-		assertEquals(
-				"Oracle has updated the cert "
-						+ certToCheck
-						+ ". Please update "
-						+ path
-						+ " with the new contents and publicize if a significant change: \n"
-						+ actual, expected, actual);
+		assertEquals(expected, actual, "Oracle has updated the cert "
+				+ certToCheck
+				+ ". Please update "
+				+ path
+				+ " with the new contents and publicize if a significant change: \n"
+				+ actual);
 	}
 }

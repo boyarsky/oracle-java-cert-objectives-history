@@ -1,8 +1,7 @@
 package com.coderanch.certs;
 
-import static org.junit.Assert.*;
-
-import org.junit.*;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.*;
 
 public class TopicListParserTest {
 

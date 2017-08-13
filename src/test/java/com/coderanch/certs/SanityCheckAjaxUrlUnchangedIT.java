@@ -1,8 +1,7 @@
 package com.coderanch.certs;
 
-import static org.junit.Assert.*;
-
-import org.junit.*;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.htmlunit.*;
 
@@ -20,7 +19,7 @@ public class SanityCheckAjaxUrlUnchangedIT {
 
 	// ----------------------------------------------------
 
-	@Before
+	@BeforeEach
 	public void connect() {
 		driver = new HtmlUnitDriver();
 	}
@@ -32,10 +31,8 @@ public class SanityCheckAjaxUrlUnchangedIT {
 		String url = CertsToCheckEnum.OCAJP_JAVA_8.getUrl();
 		driver.get(url);
 		String source = driver.getPageSource();
-		assertTrue(
-				url
-						+ " no longer uses same page for AJAX data; please check program",
-				source.contains("var site_section = \"Certification\";"));
+		assertTrue(source.contains("var site_section = \"Certification\";"),
+				url + " no longer uses same page for AJAX data; please check program");
 	}
 
 }

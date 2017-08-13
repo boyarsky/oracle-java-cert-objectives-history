@@ -1,6 +1,7 @@
 package com.coderanch.certs;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.*;
 
 import java.io.*;
 import java.util.*;
@@ -9,7 +10,6 @@ import java.util.stream.*;
 import javax.xml.parsers.*;
 import javax.xml.xpath.*;
 
-import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.htmlunit.*;
 import org.w3c.dom.*;
@@ -32,7 +32,7 @@ public class CheckForNewOrRemovedExamsIT {
 
 	// ----------------------------------------------------
 
-	@Before
+	@BeforeEach
 	public void connect() {
 		driver = new HtmlUnitDriver();
 	}
@@ -51,28 +51,27 @@ public class CheckForNewOrRemovedExamsIT {
 		Set<String> onOracleListButNotTested = new HashSet<>(
 				examNumbersFromOracle);
 		onOracleListButNotTested.removeAll(examNumbersTested);
-		
-		// 
+
+		//
 		testedButRemovedFromOracleList = normalizeBetaExamNumbers(testedButRemovedFromOracleList);
 		onOracleListButNotTested = normalizeBetaExamNumbers(onOracleListButNotTested);
-		
-		assertEquals(testedButRemovedFromOracleList
+
+		assertEquals(0, testedButRemovedFromOracleList.size(), testedButRemovedFromOracleList
 				+ "\nare checked for currency in this test project, "
 				+ "\nbut no longer on Oracle's list. "
-				+ "\nNext step: remove from enum so no longer check", 0,
-				testedButRemovedFromOracleList.size());
+				+ "\nNext step: remove from enum so no longer check");
 
-		assertEquals(onOracleListButNotTested
+		assertEquals(0, onOracleListButNotTested.size(), onOracleListButNotTested
 				+ "\nare on Oracle's list, but not tested in this project, "
-				+ "\nNext step: add to enum so start checking", 0,
-				onOracleListButNotTested.size());
+				+ "\nNext step: add to enum so start checking");
 	}
 
 	/*
 	 * normalize to change 1Z1 to 1Z0 for the exam prefix
 	 */
 	private Set<String> normalizeBetaExamNumbers(Set<String> testedButRemovedFromOracleList) {
-		return testedButRemovedFromOracleList.stream().map(s -> s.replaceFirst("^1Z1", "1Z0")).collect(Collectors.toSet());
+		return testedButRemovedFromOracleList.stream().map(s -> s.replaceFirst("^1Z1", "1Z0"))
+				.collect(Collectors.toSet());
 	}
 
 	private void setExamNumbersTested() {
@@ -90,9 +89,7 @@ public class CheckForNewOrRemovedExamsIT {
 		// currently called "Java" section in objectives
 		String xpath = "//FAMILY[NAME[contains(text(), 'Java') and not(contains(text(), 'Cloud'))]]//NUMBER";
 		NodeList nodeList = evaluateWithXpath(xpath, source);
-		assertNotEquals(
-				"no matching exams. maybe Oracle changed the XML format?", 0,
-				nodeList.getLength());
+		assertNotEquals(0, nodeList.getLength(), "no matching exams. maybe Oracle changed the XML format?");
 		for (int i = 0; i < nodeList.getLength(); i++) {
 			Node numberNode = nodeList.item(i);
 			examNumbersFromOracle.add(numberNode.getTextContent().trim());

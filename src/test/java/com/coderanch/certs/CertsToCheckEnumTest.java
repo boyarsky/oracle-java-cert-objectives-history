@@ -1,21 +1,18 @@
 package com.coderanch.certs;
 
-import static org.junit.Assert.*;
-
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.*;
 import java.util.*;
-
-import org.junit.*;
 
 public class CertsToCheckEnumTest {
 
 	@Test
 	public void noDuplicateExamNumbers() {
-		Set<String> set = new HashSet<String>();
+		Set<String> set = new HashSet<>();
 		for (CertsToCheckEnum element : CertsToCheckEnum.values()) {
 			set.add(element.examNumber);
 		}
 		int expected = CertsToCheckEnum.values().length;
-		assertEquals("exam numbers must be unique. copy/paste error?",
-				expected, set.size());
+		assertEquals(expected, set.size(), "exam numbers must be unique. copy/paste error?");
 	}
 }
