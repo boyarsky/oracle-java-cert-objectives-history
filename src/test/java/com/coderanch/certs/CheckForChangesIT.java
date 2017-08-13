@@ -85,7 +85,6 @@ public class CheckForChangesIT {
 				nodeList.getLength());
 		Node cdata = nodeList.item(0).getFirstChild();
 		String value = cdata.getNodeValue();
-		System.out.println(value);
 		value = value.replaceAll("^\\s*<p>", "");
 		value = value.replaceAll("</p>\\s+", "");
 		value = value.replaceAll("<img[^>]*>", "");
@@ -93,9 +92,6 @@ public class CheckForChangesIT {
 		value = value.replaceAll("</a>", "");
 		value = value.replaceAll("&nbsp;", "");
 		value = value.replaceAll("Exam topics in Spanish", "");
-		
-		System.out.println("---------------------------");
-		System.out.println(value);
 		return value.trim();
 	}
 	
