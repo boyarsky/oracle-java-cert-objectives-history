@@ -7,7 +7,6 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<surefire.version>2.19.1</surefire.version>
-		<junit.version>4.12</junit.version>
 		<junit.jupiter.version>5.0.0-RC2</junit.jupiter.version>
 		<junit.vintage.version>${junit.version}.0-RC2</junit.vintage.version>
 		<junit.platform.version>1.0.0-RC2</junit.platform.version>
@@ -80,12 +79,6 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.junit.platform</groupId>
 			<artifactId>junit-platform-launcher</artifactId>
 			<version>${junit.platform.version}</version>
@@ -97,13 +90,6 @@
 			<version>${junit.jupiter.version}</version>
 			<!--  docs don't have this as test scope; trying anyway to see what happens -->
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.vintage</groupId>
-			<artifactId>junit-vintage-engine</artifactId>
-			<version>${junit.vintage.version}</version>
-			<!--  docs don't have this as test scope; trying anyway to see what happens -->
-            <scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
