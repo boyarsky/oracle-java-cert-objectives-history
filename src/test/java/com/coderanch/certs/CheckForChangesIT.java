@@ -8,7 +8,6 @@ import java.nio.file.*;
 
 import javax.xml.parsers.*;
 
-import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.*;
 import org.junit.jupiter.params.provider.*;
 import org.w3c.dom.*;
@@ -23,29 +22,16 @@ public class CheckForChangesIT {
 
 	// ----------------------------------------------------
 
-	@AfterEach
-	public void close() {
-		if (stream != null) {
-			try {
-				stream.close();
-			} catch (Exception e) {
-				// ignore
-			}
-		}
-	}
-
-	// ----------------------------------------------------
-
 	@ParameterizedTest
 	@EnumSource(CertsToCheckEnum.class)
 	public void upToDate(CertsToCheckEnum c) throws Exception {
 		certToCheck = c;
 		String url = XML_URL + certToCheck.getExamNumber();
-		stream = new URL(url).openStream();
-
-		parseDocument();
-		String currentData = convertToString();
-		assertSameAsExisting(currentData);
+		try (InputStream stream = new URL(url).openStream()) {
+			parseDocument();
+			String currentData = convertToString();
+			assertSameAsExisting(currentData);
+		}
 	}
 
 	// ----------------------------------------------------
