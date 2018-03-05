@@ -27,8 +27,10 @@ public class TopicListParser {
 
 		for (int i = 0; i < list.size(); i++) {
 			Node tag = list.elementAt(i);
-
-			if (tag instanceof TextNode && ! tag.getText().trim().isEmpty()) {
+			String plainText = tag.toPlainTextString().trim();
+			if (plainText.contains("retire")) {
+				appendRetirementDate(result, tag);
+			} else if (tag instanceof TextNode && !tag.getText().trim().isEmpty()) {
 				result.append("\n");
 				result.append(unescape(tag.getText()));
 				result.append("\n");
@@ -43,6 +45,24 @@ public class TopicListParser {
 		return result.toString();
 	}
 
+	/*
+	 * Oracle is using a mix of plaintext retirement dates and formatted ones.
+	 */
+	private void appendRetirementDate(StringBuilder result, Node tag) {
+		Node paragraphTag = tag.getParent();
+		result.append("\n");
+		if (paragraphTag == null) {
+			result.append(tag.toPlainTextString().trim());
+		} else {
+			NodeList children = paragraphTag.getChildren();
+			for (int j = 0; j < children.size(); j++) {
+				Node child = children.elementAt(j);
+				result.append(child.toPlainTextString().trim() + " ");
+			}
+		}
+		result.append("\n");
+	}
+
 	private String unescape(String text) {
 		// unescaper turns into the unicode space so easier to convert first
 		String html = text.replaceAll("&nbsp;", " ");
@@ -50,12 +70,15 @@ public class TopicListParser {
 	}
 
 	private NodeFilter createFilter() {
+		// retirement date
+		NodeFilter retires = new StringFilter("retire");
+
 		// text considered a sibling of strong formatting
 		NodeFilter objectives = new HasSiblingFilter(
 				new TagNameFilter("strong"));
 		// but a child of a list item
 		NodeFilter subobjectives = new TagNameFilter("li");
-		return new OrFilter(objectives, subobjectives);
+		return new OrFilter(new NodeFilter[] { objectives, subobjectives, retires });
 	}
 
 }
