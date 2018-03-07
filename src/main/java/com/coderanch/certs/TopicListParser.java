@@ -66,6 +66,8 @@ public class TopicListParser {
 	private String unescape(String text) {
 		// unescaper turns into the unicode space so easier to convert first
 		String html = text.replaceAll("&nbsp;", " ");
+		// ignore if has random bolding
+		html = html.replaceAll("strong", "");
 		return StringEscapeUtils.unescapeHtml4(html).trim();
 	}
 
