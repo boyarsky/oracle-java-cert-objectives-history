@@ -52,13 +52,6 @@ public class CheckForNewOrRemovedExamsIT {
 				examNumbersFromOracle);
 		onOracleListButNotTested.removeAll(examNumbersTested);
 		
-		//TODO remove when oracle fixes (showing Java 6 upgrade which was never on list and doesn't have a web page)
-		if (! onOracleListButNotTested.contains("1Z0-852")) {
-			fail("Oracle fixed their list and removed 1Z0-852; update test to remove exception logic");
-		}
-		onOracleListButNotTested.remove("1Z0-852");
-		//TODO end TODO remove when oracle fixes (showing Java 6 upgrade which was never on list and doesn't have a web page)
-
 		testedButRemovedFromOracleList = normalizeBetaExamNumbers(testedButRemovedFromOracleList);
 		onOracleListButNotTested = normalizeBetaExamNumbers(onOracleListButNotTested);
 
