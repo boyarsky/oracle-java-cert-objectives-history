@@ -1,22 +1,22 @@
 package com.coderanch.certs;
 
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.io.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.stream.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
-import javax.xml.parsers.*;
-import javax.xml.xpath.*;
+import com.machinepublishers.jbrowserdriver.JBrowserDriver;
+import com.machinepublishers.jbrowserdriver.Settings;
+import com.machinepublishers.jbrowserdriver.UserAgent;
 
-import org.openqa.selenium.*;
-import org.openqa.selenium.htmlunit.*;
-import org.w3c.dom.*;
-import org.xml.sax.*;
-
-import com.machinepublishers.jbrowserdriver.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 /**
  * Checks if any exams were added in the Java domain (or removed). If so, fail
