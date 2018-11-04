@@ -5,6 +5,7 @@ import org.junit.jupiter.api.*;
 
 import java.io.*;
 import java.util.*;
+import java.util.concurrent.*;
 import java.util.stream.*;
 
 import javax.xml.parsers.*;
@@ -15,16 +16,18 @@ import org.openqa.selenium.htmlunit.*;
 import org.w3c.dom.*;
 import org.xml.sax.*;
 
+import com.machinepublishers.jbrowserdriver.*;
+
 /**
  * Checks if any exams were added in the Java domain (or removed). If so, fail
- * test so know to add new text file to src/main/resources
+ * test so know to add/remove text file to src/main/resources
  * 
  * @author jeanne
  *
  */
 public class CheckForNewOrRemovedExamsIT {
 
-	private static final String EXAM_LIST_URL = "http://education.oracle.com//pls/web_prod-plq-dad/ALL_EXAMS.getAllExamsWithProducts";
+	private static final String EXAM_LIST_URL = "https://education.oracle.com/oracle-certification-exams-list";
 
 	private WebDriver driver;
 	private Set<String> examNumbersFromOracle;
@@ -34,7 +37,10 @@ public class CheckForNewOrRemovedExamsIT {
 
 	@BeforeEach
 	public void connect() {
-		driver = new HtmlUnitDriver();
+		driver = new JBrowserDriver(Settings.builder().userAgent(UserAgent.CHROME).build());
+
+		// says 120 but is really 0
+		driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
 	}
 
 	// ----------------------------------------------------
@@ -51,7 +57,7 @@ public class CheckForNewOrRemovedExamsIT {
 		Set<String> onOracleListButNotTested = new HashSet<>(
 				examNumbersFromOracle);
 		onOracleListButNotTested.removeAll(examNumbersTested);
-		
+
 		testedButRemovedFromOracleList = normalizeBetaExamNumbers(testedButRemovedFromOracleList);
 		onOracleListButNotTested = normalizeBetaExamNumbers(onOracleListButNotTested);
 
@@ -80,28 +86,34 @@ public class CheckForNewOrRemovedExamsIT {
 	private void setCurrentExamListFromOracle() throws Exception {
 		examNumbersFromOracle = new HashSet<>();
 		driver.get(EXAM_LIST_URL);
-		String source = driver.getPageSource();
-
-		// currently called "Java" section in objectives
-		String xpath = "//FAMILY[NAME[contains(text(), 'Java') and not(contains(text(), 'Cloud'))]]//NUMBER";
-		NodeList nodeList = evaluateWithXpath(xpath, source);
-		assertNotEquals(0, nodeList.getLength(), "no matching exams. maybe Oracle changed the XML format?");
-		for (int i = 0; i < nodeList.getLength(); i++) {
-			Node numberNode = nodeList.item(i);
-			examNumbersFromOracle.add(numberNode.getTextContent().trim());
-		}
+	
+		WebElement javaHeader = getJavaHeader();
+		WebElement javaSection = javaHeader.findElement(By.xpath("./.."));
+		
+		List<WebElement> examListElements = javaSection.findElements(By.tagName("li"));
+		examNumbersFromOracle = examListElements.stream()
+			.map(this::getHiddenText)
+			// each list item in format examName | examNumber
+			.map(str -> str.replaceFirst("^.*\\|", ""))
+			.map(String::trim)
+			.collect(Collectors.toSet());
 	}
 
-	private NodeList evaluateWithXpath(String expression, String source)
-			throws ParserConfigurationException, SAXException, IOException,
-			XPathExpressionException {
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = factory.newDocumentBuilder();
-		Document doc = builder
-				.parse(new ByteArrayInputStream(source.getBytes()));
-		XPathFactory xpathFactory = XPathFactory.newInstance();
-		XPath xpath = xpathFactory.newXPath();
-		return (NodeList) xpath.evaluate(expression, doc.getDocumentElement(),
-				XPathConstants.NODESET);
+	private WebElement getJavaHeader() {
+		List<WebElement> elements = driver.findElements(By.tagName("h5"));
+		List<WebElement> matches = elements
+			.stream()
+			.filter(e -> "Java".equals(getHiddenText(e)))
+			.collect(Collectors.toList());
+		assertEquals(1 , matches.size(), "should be exactly one java header section");
+		return matches.get(0);
+	}
+
+	/*
+	* Check hidden text (textContent) instead of getText() becuase page
+	* requires clicking/expansion to see the specific exams
+	*/
+	private String getHiddenText(WebElement e) {
+		return e.getAttribute("textContent");
 	}
 }
