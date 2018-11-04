@@ -1,9 +1,8 @@
 package com.coderanch.certs;
 
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.*;
-import org.openqa.selenium.*;
-import org.openqa.selenium.htmlunit.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
 
 /**
  * Checks the public page still uses the same AJAX URL since CheckForChangesIT
@@ -13,25 +12,16 @@ import org.openqa.selenium.htmlunit.*;
  * @author jeanne
  *
  */
-public class SanityCheckAjaxUrlUnchangedIT {
-
-	private WebDriver driver;
-
-	// ----------------------------------------------------
-
-	@BeforeEach
-	public void connect() {
-		driver = new HtmlUnitDriver();
-	}
-
-	// ----------------------------------------------------
+public class SanityCheckAjaxUrlUnchangedIT extends AbstractSeleniumTestCase {
 
 	@Test
 	public void ajaxUrl() {
-		String url = CertsToCheckEnum.OCAJP_JAVA_8.getUrl();
+		// has the data in JSON (or HTML inside the JSON)
+		String url = "https://education.oracle.com/ccstoreui/v1/pages/java-se-8-programmer-i/pexam_1Z0-808?dataOnly=false&cacheableDataOnly=true&productTypesRequired=true";
 		driver.get(url);
+
 		String source = driver.getPageSource();
-		assertTrue(source.contains("var site_section = \"Certification\";"),
+		assertTrue(source.contains("Java Basics"),
 				url + " no longer uses same page for AJAX data; please check program");
 	}
 

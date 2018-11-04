@@ -5,17 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
-import com.machinepublishers.jbrowserdriver.JBrowserDriver;
-import com.machinepublishers.jbrowserdriver.Settings;
-import com.machinepublishers.jbrowserdriver.UserAgent;
-
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 /**
@@ -25,23 +18,12 @@ import org.openqa.selenium.WebElement;
  * @author jeanne
  *
  */
-public class CheckForNewOrRemovedExamsIT {
+public class CheckForNewOrRemovedExamsIT extends AbstractSeleniumTestCase {
 
 	private static final String EXAM_LIST_URL = "https://education.oracle.com/oracle-certification-exams-list";
 
-	private WebDriver driver;
 	private Set<String> examNumbersFromOracle;
 	private Set<String> examNumbersTested;
-
-	// ----------------------------------------------------
-
-	@BeforeEach
-	public void connect() {
-		driver = new JBrowserDriver(Settings.builder().userAgent(UserAgent.CHROME).build());
-
-		// says 120 but is really 0
-		driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
-	}
 
 	// ----------------------------------------------------
 
