@@ -13,118 +13,98 @@ public enum CertsToCheckEnum {
     /*
      * OCA 7
      */
-    OCAJP_JAVA_7("1Z0-803",
-            "http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-803", ""),
+    OCAJP_JAVA_7("1Z0-803"),
     /*
      * OCP 7
      */
-    OCPJP_JAVA_7("1Z0-804",
-            "http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-804", ""),
+    OCPJP_JAVA_7("1Z0-804"),
 
     /*
      * OCP 8
      */
-    OCPJP_JAVA_8("1Z0-809",
-            "https://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-809", ""),
+    OCPJP_JAVA_8("1Z0-809"),
     /*
      * Java 7 OCP upgrade
      */
-    JAVA_7_UPGRADE("1Z0-805",
-            "http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-805", ""),
+    JAVA_7_UPGRADE("1Z0-805"),
     /*
      * OCA 8
      */
-    OCAJP_JAVA_8("1Z0-808", "https://education.oracle.com/product/pexam_1Z0-808",
-            "https://education.oracle.com/ccstoreui/v1/pages/product/pexam_1Z0-808?dataOnly=false&cacheableDataOnly=true&productTypesRequired=true"),
+    OCAJP_JAVA_8("1Z0-808"),
     //"https://education.oracle.com/ccstoreui/v1/pages/java-se-8-programmer-i/pexam_1Z0-808?dataOnly=false&cacheableDataOnly=true&productTypesRequired=true"),
     /*
      * Java 7 to 8 OCP upgrade
      */
-    JAVA_8_UPGRADE("1Z0-810",
-            "https://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-810", ""),
+    JAVA_8_UPGRADE("1Z0-810"),
     /*
      * Java <=6 to 8 OCP upgrade
      */
-    JAVA_8_UPGRADE_FROM_PRE_7("1Z0-813",
-            "https://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-813",
-            "https://education.oracle.com/ccstoreui/v1/pages/product/pexam_1Z0-813?dataOnly=false&cacheableDataOnly=true&productTypesRequired=true"),
+    JAVA_8_UPGRADE_FROM_PRE_7("1Z0-813"),
     /*
      * Java (8) Foundational
      */
-    JAVA_FOUNDATIONAL("1Z0-811",
-            "https://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-811", ""),
+    JAVA_FOUNDATIONAL("1Z0-811"),
 
     // ----------------------------------------------------
 
     /*
      * OCMEA 6 - part 1
      */
-    OCMJEA_6_PART_1("1Z0-807",
-            "http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-807", ""),
+    OCMJEA_6_PART_1("1Z0-807"),
     /*
      * OCMEA 6 - part 2
      */
-    OCMJEA_ASSIGNMENT("1Z0-865",
-            "http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-865", ""),
+    OCMJEA_ASSIGNMENT("1Z0-865"),
     /*
      * OCMEA 6 - part 3
      */
-    OCMJEA_ESSAY("1Z0-866",
-            "http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-866", ""),
+    OCMJEA_ESSAY("1Z0-866"),
     /*
      * OCMEA 6 - part 3 resubmit
      */
-    OCMJEA_RESUBMIT("1Z0-867",
-            "http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-867", ""),
+    OCMJEA_RESUBMIT("1Z0-867"),
 
     // ----------------------------------------------------
 
     /*
      * JPA 6
      */
-    JPA_6("1Z0-898",
-            "http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-898", ""),
+    JPA_6("1Z0-898"),
     /*
      * EJB 6
      */
-    EJB_6("1Z0-895",
-            "http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-895", ""),
+    EJB_6("1Z0-895"),
     /*
      * Java EE 7
      */
-    JAVA_EE_7("1Z0-900",
-            "http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-900", ""),
+    JAVA_EE_7("1Z0-900"),
 
     // ----------------------------------------------------
     /*
      * Web Services 6
      */
-    WEB_SERVICES_6("1Z0-897",
-            "http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-897", ""),
+    WEB_SERVICES_6("1Z0-897"),
     /*
      * Web Component 6
      */
-    WEB_COMPONENT_6("1Z0-899",
-            "http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-899", ""),
+    WEB_COMPONENT_6("1Z0-899"),
     /*
      * JSF 6
      */
-    JSF_6("1Z0-896",
-            "http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=652&get_params=p_exam_id:1Z0-896", "");
+    JSF_6("1Z0-896");
     // ----------------------------------------------------
     String examNumber;
     String url;
     // couldn't figure how to get this programmatically so looked up each one
     String ajaxDataUrl;
 
-    private CertsToCheckEnum(String examNumber, String url, String ajaxDataUrl) {
+    private CertsToCheckEnum(String examNumber) {
         this.examNumber = examNumber;
-        this.url = url;
-        this.ajaxDataUrl = ajaxDataUrl;
     }
 
     /**
      * URL of exam home page using default URL format. If this format changes, need to override in each enum
+     *
      * @return url
      */
     public String getUrl() {
@@ -133,6 +113,7 @@ public enum CertsToCheckEnum {
 
     /**
      * URL of exam data using default URL format. If this format changes, need to override in each enum
+     *
      * @return url
      */
     public String getAjaxDataUrl() {
