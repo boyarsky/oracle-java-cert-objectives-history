@@ -1,0 +1,19 @@
+http://education.oracle.com/pls/web_prod-plq-dad/oucertapp_bo.getExamData?p_exam_id=1Z0-803
+
+https://education.oracle.com/ccstoreui/v1/pages/layout/java-se-8-programmer-i/pexam_1Z0-808?ccvp=lg - json of page including html
+makes calls to other template urls
+https://education.oracle.com/file/v7556660474691529968/widget/v4/OUExamDescription/templates/display-wi2900015.template - still a templat enot the data
+
+https://education.oracle.com/ccstoreui/v1/registry - list of web service urls
+
+https://education.oracle.com/ccstoreui/v1/prices/products - blank page
+
+https://education.oracle.com/ccstoreui/v1/products - names of certs but not details
+https://education.oracle.com/ccstoreui/v1/productTypes - ex: exam. but not each exam
+
+https://education.oracle.com/ccstoreui/v1/pages - database exam mention but doesn't look like a list
+
+in chrome
+https://education.oracle.com/ccstoreui/v1/products/courP_4349?fields=repositoryId%2CdisplayName%2Couaudience%2ClongDescription%2CchildSKUs.repositoryId%2CchildSKUs.listPrices - has 245 in different countries
+
+in memory database knows there are 85 questions in <p> tag so that works. ? works on jenkins
