@@ -3,7 +3,7 @@ Duration: 6 months from assignment purchase
 Passing Score: Subject to validation of assignment.%
 US exam cost: US$ 245
 
-Topics:
+Section 1: Application Design Concepts and Principles
 - Document a given system architecture by creating UML diagrams for it
 - Explain the main advantages of an object-oriented approach to system design. including the effect of encapsulation, inheritance, and use of interfaces on architectural characteristics.
 - Describe how the principle of "separation of concerns" has been applied to the main system tiers of a Java Platform, Enterprise Edition (Java EE) application. Tiers include client (both GUI and web), web (web container), business (EJB container), integration, and resource tiers.

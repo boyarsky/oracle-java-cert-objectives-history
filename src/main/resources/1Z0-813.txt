@@ -1,38 +1,7 @@
-Duration: 130 minutes
+Duration: 130
 # Questions: 60
 Passing Score: 63%
 US exam cost: US$ 245
-
-Topics:
-- 
-
-Missing package and import statements
-
-: If sample code do not include package or import statements, and the question does not explicitly refer to these missing statements, then assume that all sample code is in the same package, or import statements exist to support them.
-- 
-
-No file or directory path names for classes
-
-: If a question does not state the file names or directory locations of classes, then assume one of the following, whichever will enable the code to compile and run:
-- All classes are in one file
-- Each class is contained in a separate file, and all files are in one directory
-- 
-
-Unintended line breaks
-
-: Sample code might have unintended line breaks. If you see a line of code that looks like it has wrapped, and this creates a situation where the wrapping is significant (for example, a quoted String literal has wrapped), assume that the wrapping is an extension of the same line, and the line does not contain a hard carriage return that would cause a compilation failure.
-- 
-
-Code fragments
-
-: A code fragment is a small section of source code that is presented without its context. Assume that all necessary supporting code exists and that the supporting environment fully supports the correct compilation and execution of the code shown and its omitted environment.
-- 
-
-Descriptive comments
-
-: Take descriptive comments, such as "setter and getters go here," at face value. Assume that correct code exists, compiles, and runs successfully to create the described effect.
-
-TOPICS
 
 Language Enhancements
 - Develop code that uses String objects in the switch statement, binary literals, and numeric literals, including underscores in literals
@@ -72,8 +41,8 @@ Java Collections
 - Search for data by using methods, such as findFirst(), findAny(), anyMatch(), allMatch(), and noneMatch()
 - Perform calculations on Java Streams by using count, max, min, average, and sum methods and save results to a collection by using the collect method and Collector class, including the averagingDouble, groupingBy, joining, partitioningBy methods
 - Develop code that uses Java SE 8 collection improvements, including the Collection.removeIf(), List.replaceAll(), Map.computeIfAbsent(), and Map.computeIfPresent() methods
-- Develop code that uses the merge(), flatMap(), and map() methods on Java Streams
+- Develop  code that uses the merge(), flatMap(), and map() methods on Java Streams
 
 Java Streams
-- Describe the Stream interface and pipelines; create a stream by using the Arrays.stream() and IntStream.range() methods; identify the lambda operations that are lazy
+- Describe the Stream interface and pipelines; create a stream by using the Arrays.stream() and  IntStream.range() methods; identify the lambda operations that are lazy
 - Develop code that uses parallel streams, including decomposition operation and reduction operation in streams

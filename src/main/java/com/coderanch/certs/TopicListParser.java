@@ -22,27 +22,49 @@ public class TopicListParser {
 
 	public String convertToTextFormat() throws ParserException {
 		StringBuilder result = new StringBuilder();
+		StringBuilder objectives = new StringBuilder();
+		StringBuilder assumptions = new StringBuilder();
+		boolean inAssumptions = false;
 		Parser parser = Parser.createParser(initialText, "US-ASCII");
 		NodeList list = parser.parse(createFilter());
 
 		for (int i = 0; i < list.size(); i++) {
 			Node tag = list.elementAt(i);
 			String plainText = tag.toPlainTextString().trim();
-			if (plainText.contains("retire")) {
-				appendRetirementDate(result, tag);
-			} else if (tag instanceof TextNode && !tag.getText().trim().isEmpty()) {
-				result.append("\n");
-				result.append(unescape(tag.getText()));
-				result.append("\n");
-			} else if (tag instanceof Bullet) {
-				Node child = tag.getFirstChild();
-				result.append("- ");
-				result.append(unescape(child.getText()));
-				result.append("\n");
+			if (plainText.trim().equals("Assume the following:")) {
+				inAssumptions = true;
 			}
+			if (inAssumptions) {
+				appendText(assumptions, tag, plainText);
+			} else {
+				appendText(objectives, tag, plainText);
+			}
+			
 		}
 
+		// omit assumptions while comparing to old format
+		//result.append(assumptions);
+		result.append(objectives);
 		return result.toString();
+	}
+
+	private void appendText(StringBuilder result, Node tag, String plainText) {
+		if (plainText.contains("retire")) {
+			appendRetirementDate(result, tag);
+		}
+		else if (tag instanceof TextNode && !tag.getText().trim().isEmpty()) {
+			result.append("\n");
+			result.append(unescape(tag.getText()));
+			result.append("\n");
+		} else if (tag instanceof Bullet) {
+			Node child = tag.getFirstChild();
+			if (child instanceof Span) {
+			    child = child.getFirstChild();
+            }
+			result.append("- ");
+			result.append(unescape(child.getText()));
+			result.append("\n");
+		}
 	}
 
 	/*

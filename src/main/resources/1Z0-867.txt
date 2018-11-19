@@ -2,5 +2,3 @@ Duration: 30 days from failed notification
 # Questions: NA
 Passing Score: Subject to validation of assignment.%
 US exam cost: US$ 245
-
-Topics:

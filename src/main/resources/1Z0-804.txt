@@ -5,32 +5,32 @@ US exam cost: US$ 245
 
 Topics:
 
-This exam retires Dec 31, 2018. More 
+This exam retires Dec 31, 2018. More
 
 Assume the following:
-- 
+-
 
 Missing package and import statements
 
 : If sample code do not include package or import statements, and the question does not explicitly refer to these missing statements, then assume that all sample code is in the same package, or import statements exist to support them.
-- 
+-
 
 No file or directory path names for classes
 
 : If a question does not state the file names or directory locations of classes, then assume one of the following, whichever will enable the code to compile and run:
 - All classes are in one file
 - Each class is contained in a separate file, and all files are in one directory
-- 
+-
 
 Unintended line breaks
 
 : Sample code might have unintended line breaks. If you see a line of code that looks like it has wrapped, and this creates a situation where the wrapping is significant (for example, a quoted String literal has wrapped), assume that the wrapping is an extension of the same line, and the line does not contain a hard carriage return that would cause a compilation failure.
-- 
+-
 
 Code fragments
 
 : A code fragment is a small section of source code that is presented without its context. Assume that all necessary supporting code exists and that the supporting environment fully supports the correct compilation and execution of the code shown and its omitted environment.
-- 
+-
 
 Descriptive comments
 

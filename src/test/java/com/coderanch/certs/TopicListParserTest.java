@@ -13,7 +13,5 @@ public class TopicListParserTest {
 		TopicListParser parser = new TopicListParser(topics);
 		String actual = parser.convertToTextFormat();
 		assertEquals(expected, actual);
-
 	}
-
 }

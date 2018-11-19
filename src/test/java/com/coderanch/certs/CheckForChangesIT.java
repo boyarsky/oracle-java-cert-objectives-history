@@ -1,90 +1,68 @@
 package com.coderanch.certs;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.*;
 
 import java.io.*;
 import java.net.*;
 import java.nio.file.*;
+import java.util.*;
 
-import javax.xml.parsers.*;
-
+import org.apache.commons.io.*;
 import org.junit.jupiter.params.*;
 import org.junit.jupiter.params.provider.*;
+import org.openqa.selenium.htmlunit.*;
 import org.w3c.dom.*;
 
-public class CheckForChangesIT {
-
-	private static final String XML_URL = "http://education.oracle.com/pls/web_prod-plq-dad/oucertapp_bo.getExamData?p_exam_id=";
+/**
+ * Checks if test objectives have changed.
+ * 
+ * @author jeanne
+ *
+ */
+public class CheckForChangesIT  {
 
 	private CertsToCheckEnum certToCheck;
-	private Document doc;
 
 	// ----------------------------------------------------
 
 	@ParameterizedTest
 	@EnumSource(CertsToCheckEnum.class)
 	public void upToDate(CertsToCheckEnum c) throws Exception {
-		certToCheck = c;
-		String url = XML_URL + certToCheck.getExamNumber();
+	    assumeTrue(c != CertsToCheckEnum.OCPJP_JAVA_7, "OCP 7 exam returns odd HTML for topics list. It's going away in December though so not worth worrying about.");
+
+        printHeader(c);
+        certToCheck = c;
+		// TODO remove
+		if (certToCheck.getAjaxDataUrl().trim().isEmpty()) {
+			throw new RuntimeException("need to finish test");
+		}
+		assertNotEquals("", certToCheck.getAjaxDataUrl(), "need to specifcy url");
+		String url = certToCheck.getAjaxDataUrl();
 		try (InputStream stream = new URL(url).openStream()) {
-			parseDocument(stream);
-			String currentData = convertToString();
+			List<String> lines = IOUtils.readLines(stream);
+			assertEquals(1, lines.size(), "expecting only one line of input. If changes update this code");
+			String currentData = convertToString(lines.get(0));
 			assertSameAsExisting(currentData);
 		}
 	}
 
-	// ----------------------------------------------------
+    private void printHeader(CertsToCheckEnum c) {
+        System.out.println("Checking " + c.getExamNumber());
+        System.out.println("URL " + c.getUrl());
+        System.out.println("AJAX Data " + c.getAjaxDataUrl());
+        System.out.println("-----------------------------------------");
+        System.out.println("");
+    }
 
-	private void parseDocument(InputStream stream) throws Exception {
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = factory.newDocumentBuilder();
-		doc = builder.parse(stream);
-	}
-
-	/*
-	 * Remove p, img and a tags along with whitespace if present
-	 */
-	private String getCDataForTag(String tag) {
-		NodeList nodeList = doc.getElementsByTagName(tag);
-		assertEquals(1, nodeList.getLength(), "must be exactly one tag named " + tag + " for "
-				+ certToCheck + " in " + certToCheck.getExamNumber());
-		Node cdata = nodeList.item(0).getFirstChild();
-		String value = cdata.getNodeValue();
-		value = value.replaceAll("^\\s*<p>", "");
-		value = value.replaceAll("</p>\\s+", "");
-		value = value.replaceAll("<img[^>]*>", "");
-		value = value.replaceAll("<a[^>]*>", "");
-		value = value.replaceAll("</a>", "");
-		value = value.replaceAll("&nbsp;", "");
-		value = value.replaceAll("Exam topics in Spanish", "");
-		return value.trim();
-	}
-
-	private String getCDataForTagWithoutDivs(String tag) {
-		String value = getCDataForTag(tag);
-		value = value.replaceAll("<div[^>]*>", "");
-		value = value.replaceAll("</div>", "");
-		value = value.replaceAll("<p>", "");
-		return value.trim();
-	}
+    // ----------------------------------------------------
 
 	/*
 	 * Human readable version that we store/compare over time
 	 */
-	private String convertToString() throws Exception {
-		StringBuilder data = new StringBuilder();
-
-		data.append("Duration: " + getCDataForTagWithoutDivs("DURATION") + "\n");
-		data.append("# Questions: " + getCDataForTagWithoutDivs("NUMBER_OF_QUESTIONS")
-				+ "\n");
-		data.append("Passing Score: " + getCDataForTagWithoutDivs("PASSING_SCORE") + "\n");
-		data.append("US exam cost: " + getCDataForTagWithoutDivs("PRICE") + "\n");
-		data.append("\n");
-
-		TopicListParser parser = new TopicListParser(getCDataForTag("TOPICS"));
-		data.append("Topics:\n" + parser.convertToTextFormat());
-
-		return data.toString();
+	private String convertToString(String json) throws Exception {
+		SingleExamPageParser parser = new SingleExamPageParser();
+		return parser.convertToTextFormat(json);
 	}
 
 	// ----------------------------------------------------

@@ -1,42 +1,7 @@
-Duration: 150 minutes
+Duration: 150
 # Questions: 70
 Passing Score: 63%
 US exam cost: US$ 245
-
-Topics:
-
-This exam retires Dec 31, 2018. More
-
-Assume the following:
-- 
-
-Missing package and import statements
-
-: If sample code do not include package or import statements, and the question does not explicitly refer to these missing statements, then assume that all sample code is in the same package, or import statements exist to support them.
-- 
-
-No file or directory path names for classes
-
-: If a question does not state the file names or directory locations of classes, then assume one of the following, whichever will enable the code to compile and run:
-- All classes are in one file
-- Each class is contained in a separate file, and all files are in one directory
-- 
-
-Unintended line breaks
-
-: Sample code might have unintended line breaks. If you see a line of code that looks like it has wrapped, and this creates a situation where the wrapping is significant (for example, a quoted String literal has wrapped), assume that the wrapping is an extension of the same line, and the line does not contain a hard carriage return that would cause a compilation failure.
-- 
-
-Code fragments
-
-: A code fragment is a small section of source code that is presented without its context. Assume that all necessary supporting code exists and that the supporting environment fully supports the correct compilation and execution of the code shown and its omitted environment.
-- 
-
-Descriptive comments
-
-: Take descriptive comments, such as "setter and getters go here," at face value. Assume that correct code exists, compiles, and runs successfully to create the described effect.
-
-TOPICS
 
 Java Basics
 - Define the scope of variables
@@ -74,13 +39,13 @@ Using Loop Constructs
 
 Working with Methods and Encapsulation
 - Create methods with arguments and return values
-- Apply the static keyword to methods and fields
+- Apply the static keyword  to methods and fields
 - Create an overloaded method
 - Differentiate between default and user defined constructors
 - Create and overload constructors
 - Apply access modifiers
 - Apply encapsulation principles to a class
-- Determine the effect upon object references and primitive values when they are passed into methods that change the values
+- Determine the effect upon object references and primitive values when they are passed  into methods that change the values
 
 Working with Inheritance
 - Implement inheritance
@@ -96,3 +61,5 @@ Handling Exceptions
 - Describe what Exceptions are used for in Java
 - Invoke a method that throws an exception
 - Recognize common exception classes and categories
+
+Las Temas en Espanol
