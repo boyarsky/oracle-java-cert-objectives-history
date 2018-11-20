@@ -22,29 +22,14 @@ public class TopicListParser {
 
 	public String convertToTextFormat() throws ParserException {
 		StringBuilder result = new StringBuilder();
-		StringBuilder objectives = new StringBuilder();
-		StringBuilder assumptions = new StringBuilder();
-		boolean inAssumptions = false;
 		Parser parser = Parser.createParser(initialText, "US-ASCII");
 		NodeList list = parser.parse(createFilter());
 
 		for (int i = 0; i < list.size(); i++) {
 			Node tag = list.elementAt(i);
 			String plainText = tag.toPlainTextString().trim();
-			if (plainText.trim().equals("Assume the following:")) {
-				inAssumptions = true;
-			}
-			if (inAssumptions) {
-				appendText(assumptions, tag, plainText);
-			} else {
-				appendText(objectives, tag, plainText);
-			}
-			
+			appendText(result, tag, plainText);
 		}
-
-		// omit assumptions while comparing to old format
-		//result.append(assumptions);
-		result.append(objectives);
 		return result.toString();
 	}
 
@@ -61,8 +46,13 @@ public class TopicListParser {
 			if (child instanceof Span) {
 			    child = child.getFirstChild();
             }
-			result.append("- ");
-			result.append(unescape(child.getText()));
+			result.append("-");
+            String unescaped = unescape(child.getText());
+            // some random assumptions have CSS in them
+            if (! unescaped.isEmpty() && ! unescaped.startsWith("style=\"")) {
+                result.append(' ');
+                result.append(unescaped);
+            }
 			result.append("\n");
 		}
 	}

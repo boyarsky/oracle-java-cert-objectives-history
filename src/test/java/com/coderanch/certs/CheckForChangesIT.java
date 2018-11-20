@@ -33,10 +33,7 @@ public class CheckForChangesIT  {
 
         printHeader(c);
         certToCheck = c;
-		// TODO remove
-		if (certToCheck.getAjaxDataUrl().trim().isEmpty()) {
-			throw new RuntimeException("need to finish test");
-		}
+
 		assertNotEquals("", certToCheck.getAjaxDataUrl(), "need to specifcy url");
 		String url = certToCheck.getAjaxDataUrl();
 		try (InputStream stream = new URL(url).openStream()) {
