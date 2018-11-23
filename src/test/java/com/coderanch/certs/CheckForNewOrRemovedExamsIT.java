@@ -82,20 +82,12 @@ public class CheckForNewOrRemovedExamsIT extends AbstractSeleniumTestCase {
 	}
 
 	private WebElement getJavaHeader() {
-		List<WebElement> elements = driver.findElements(By.tagName("h5"));
-		List<WebElement> matches = elements
-			.stream()
-			.filter(e -> "Java".equals(getHiddenText(e)))
-			.collect(Collectors.toList());
-		assertEquals(1 , matches.size(), "should be exactly one java header section");
-		return matches.get(0);
-	}
-
-	/*
-	* Check hidden text (textContent) instead of getText() becuase page
-	* requires clicking/expansion to see the specific exams
-	*/
-	private String getHiddenText(WebElement e) {
-		return e.getAttribute("textContent");
-	}
+        List<WebElement> elements = driver.findElements(By.tagName("h5"));
+        List<WebElement> matches = elements
+                .stream()
+                .filter(e -> "Java".equals(getHiddenText(e)))
+                .collect(Collectors.toList());
+        assertEquals(1, matches.size(), "should be exactly one java header section");
+        return matches.get(0);
+    }
 }

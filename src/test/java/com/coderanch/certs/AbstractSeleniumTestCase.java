@@ -10,6 +10,7 @@ import com.machinepublishers.jbrowserdriver.UserAgent;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public abstract class AbstractSeleniumTestCase {
 
@@ -34,5 +35,13 @@ public abstract class AbstractSeleniumTestCase {
 			driver.quit();
 		}
 	}
+
+    /*
+     * Check hidden text (textContent) instead of getText() because page
+     * requires clicking/expansion to see the specific exams
+     */
+    protected String getHiddenText(WebElement e) {
+        return e.getAttribute("textContent");
+    }
     
 }
